@@ -7,8 +7,6 @@ const Category = require("../models/category");
 // middleware that is specific to this router
 router.use(express.urlencoded({ extended: false }));
 
-const cors = require("cors");
-
 router.use(
   cors({
     origin: [
