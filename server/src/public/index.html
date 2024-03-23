@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="shortcut icon" href="#" />
+    <!-- <link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="icon" type="image/gif" href="favicon/animated_favicon1.gif"> -->
+
+    <title>Send First Meal</title>
+  </head>
+  <body>
+    <form classname="form">
+      <div class="input_wrapper">
+        <label for="name">name</label>
+        <input type="text" name="name" />
+      </div>
+      <div class="input_wrapper">
+        <label for="miniDesc">miniDesc</label>
+        <input type="text" name="miniDesc" />
+      </div>
+      <div class="input_wrapper">
+        <label for="longDesc">longDesc</label>
+        <input type="text" name="longDesc" />
+      </div>
+      <div class="input_wrapper">
+        <label for="category">category</label>
+        <input type="text" name="category" />
+      </div>
+      <div class="input_wrapper">
+        <label for="ratings">ratings</label>
+        <input type="text" name="ratings" />
+      </div>
+      <div class="input_wrapper">
+        <label for="price">price</label>
+        <input type="number" name="price" />
+      </div>
+      <div class="input_wrapper">
+        <label for="image">image</label>
+        <input type="text" name="image" />
+      </div>
+      <div class="input_wrapper">
+        <label for="origin">origin</label>
+        <input type="text" name="origin" />
+      </div>
+      <div class="input_wrapper">
+        <label for="ingredients">ingredients</label>
+        <input type="text" name="ingredients" />
+      </div>
+
+      <!-- <div class="input_wrapper">
+        <label for="file">file</label>
+        <input type="file" name="meal" />
+      </div> -->
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(form); // "multipart/form-data"
+      const urlencoded = new URLSearchParams(fd).toString(); // "application/x-www-form-urlencoded"
+      fetch("http://localhost:5000/api/delivery/meals/meal", {
+        method: "POST",
+        body: urlencoded,
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded",
+        },
+      });
+    });
+  </script>
+</html>

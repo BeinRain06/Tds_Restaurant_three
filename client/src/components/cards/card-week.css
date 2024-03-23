@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+@media (min-width: 180px) {
+  .weeks_day_li {
+    cursor: pointer;
+    font-size: 0.75rem;
+    height: auto;
+    padding: 0 0.5rem;
+    background-color: #fff;
+    transition: all 600ms ease-in-out;
+  }
+
+  .weeks_day_li.active_day {
+    cursor: pointer;
+    font-size: 0.75rem;
+    height: auto;
+    padding: 0 0.5rem 0rem 1rem;
+    background-color: #d1e26f;
+    border-radius: 5px;
+    border: 1px solid #fff;
+  }
+
+  .spread_week_ct {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spread_week_ct span {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .weeks_day_li {
+    font-size: 0.85rem;
+  }
+
+  .weeks_day_li .day_week {
+    padding-left: 0.25rem;
+  }
+
+  .weeks_day_li .day_count {
+    font-size: 0.875rem;
+  }
+}

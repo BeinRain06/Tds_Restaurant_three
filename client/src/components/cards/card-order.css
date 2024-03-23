@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.2em 0.4em;
+  font-size: clamp(0.75rem, 0.85rem, 1rem);
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.dish_sub_opering .btn_subCard {
+  width: 100%;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 180px) {
+  .btn_subCard {
+    font-size: clamp(0.65rem, 0.8rem 0.82rem);
+  }
+  .btn_subCard.btn_clear {
+    width: 3.8rem;
+  }
+
+  .keeping_table {
+    width: calc(90vw);
+    margin: 0 auto;
+    padding: 0.35rem 0.25rem;
+    background-color: #1c7e4d;
+  }
+
+  .keeping_table p {
+    font-size: clamp(0.75rem, 0.84rem, 1rem);
+  }
+
+  .dish_table {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*  color:#d4cfcf */
+  }
+
+  .dish_topic {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dish_topic p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+  }
+
+  .dish_topic span.number_order {
+    padding: 0.1rem 0.4rem;
+    color: #fff;
+    background-color: brown;
+    font-size: clamp(0.56rem, 0.65rem, 0.86rem);
+    display: grid;
+    place-items: center;
+    border: 1px solid #fff;
+  }
+
+  .dish_country {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: clamp(0.8rem, 0.9rem, 1rem);
+    text-align: center;
+  }
+
+  .dish_sub_opering {
+    width: 100%;
+    padding: 0.75rem 0.5rem 0.5rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .clearing {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .adjust_order {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .add_meal,
+  .remove_meal {
+    position: relative;
+    width: 30px;
+    padding: 0.25rem 0;
+    color: #fff;
+    background-color: #1c7e4d;
+  }
+
+  .remove_meal {
+    background-color: brown;
+  }
+
+  .dish_consumed {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .dish_consumed * {
+    width: 50%;
+  }
+
+  .dish_consumed .dish_price {
+    padding: 0.15rem;
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+  }
+
+  .brief_over_meal {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brief_over_meal * {
+    width: 50%;
+    text-align: center;
+  }
+
+  .brief_over_meal .dish_order_img {
+    position: relative;
+    top: 0;
+    left: -4%;
+    width: calc(36vw);
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 400px) {
+  .keeping_table {
+    /* width: calc(66vw - 5rem); */
+    width: 100%;
+    padding: 0.35rem 0.2rem;
+    margin: 0 auto;
+  }
+
+  .keeping_table .dish_topic p {
+    font-weight: bolder;
+    font-size: clamp(0.89rem, 1rem, 1.25rem);
+    font-size: clamp(0.85rem, 0.89rem, 1.15rem);
+  }
+
+  .keeping_table .dish_topic .dish_current_name {
+    font-size: clamp(0.89rem, 1rem, 1.25rem);
+  }
+
+  .dish_consumed .dish_price {
+    width: calc(44% - 10px);
+    padding: 0.15rem;
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .brief_over_meal .dish_order_img {
+    position: relative;
+    top: 0;
+    left: 6%;
+    width: calc(16vw);
+    height: 56px;
+  }
+}
+
+@media (min-width: 800px) {
+  .keeping_table .dish_table {
+    height: 272px;
+  }
+  .dish_country {
+    padding: 0.75rem 0.75rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .keeping_table .dish_topic {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .keeping_table .dish_consumed {
+    padding: 1rem 0.5rem;
+    margin: 0.35rem 0 0.5rem;
+  }
+
+  .brief_over_meal * {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    transition: all 1s ease-in-out;
+  }
+
+  /* .brief_over_meal .brief_img {
+    width: calc(16vw);
+  } */
+
+  .brief_over_meal .dish_order_img {
+    position: relative;
+    top: 3px;
+    left: 4px;
+    width: calc(16vw - 4px);
+    backdrop-filter: invert(200%);
+  }
+
+  .brief_over_meal .dish_order_desc {
+    position: absolute;
+    top: 0;
+    right: -0.5rem;
+    width: 50%;
+    height: 100%;
+  }
+
+  .brief_over_meal .dish_order_desc:hover {
+    color: #0f0f0f;
+  }
+}
+
+@media (min-width: 1100px) {
+  /*  .brief_over_meal .dish_order_img {
+    position: relative;
+    top: 0;
+    left: 6%;
+    width: calc(16vw);
+    width: 100%;
+    height: 56px;
+  } */
+
+  /*  .brief_over_meal .dish_order_desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+  } */
+}

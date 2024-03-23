@@ -1,0 +1,29 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* font-family: 'Merriweather', serif;
+logo_brand
+font-family: 'Playfair Display', serif;
+font-family: 'Yuji Mai', serif; */
+
+/*icons*/
+/* <i class="fa-solid fa-bars"></i>
+<FontAwesomeIcon icon="fa-solid fa-bars" />
+<FontAwesomeIcon icon="fa-solid fa-xmark" />
+<FontAwesomeIcon icon="fa-solid fa-check" /> */
+
+@media (min-width: 180px) {
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    /* color: #1c7e4d; */
+    /* color: #e1ebe6; */
+    background-color: #c5c5c5;
+  }
+}

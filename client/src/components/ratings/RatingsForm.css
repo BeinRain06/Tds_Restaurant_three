@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 180px) {
+  /*wrapping ratings box*/
+  .wrapping_ratings_form {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 86%;
+    height: 11rem;
+    transform: translate(-39%, -50%);
+    z-index: 5;
+  }
+
+  .ratings_control_form {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    background-color: #b3a97a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ratings_control_form .rate_feed {
+    list-style: none;
+    width: 100%;
+    height: 100px;
+  }
+
+  .rate_feed li {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    border: 2px solid transparent;
+    text-align: left;
+    font-size: clamp(0.65rem, 0.78rem, 0.98rem);
+  }
+
+  .rate_feed input {
+    width: 100%;
+    height: 50%;
+    padding: 0.25rem;
+    color: #fff;
+    background-color: rgba(51, 26, 26, 0.37);
+    font-size: clamp(0.65rem, 0.78rem, 0.98rem);
+    text-align: left;
+  }
+
+  .ratings_control_form .wrap_score_ratings {
+    list-style: none;
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .abort_submit,
+  .send_new_feed {
+    width: 60px;
+    height: 100%;
+    color: #b6bda6;
+    background-color: #333;
+    border: 2px solid rgb(73, 40, 40);
+    display: flex;
+    justify-content: center;
+  }
+
+  .send_new_feed {
+    background-color: #a2b47c;
+    color: #333;
+    border: 2px solid rgb(31, 68, 26);
+  }
+}
+
+@media (min-width: 560px) {
+  /*wrapping ratings box*/
+  .wrapping_ratings_form {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 64%;
+    height: 11rem;
+    transform: translate(-34%, -50%);
+  }
+}
+
+@media (min-width: 900px) {
+  /*wrapping ratings box*/
+  .wrapping_ratings_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 86%;
+    height: 11rem;
+    transform: translate(-50%, -50%);
+  }
+}

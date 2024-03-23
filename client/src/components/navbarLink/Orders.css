@@ -1,0 +1,1467 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* slick */
+
+div,
+ul {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn_sub {
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #444;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.btn_apply_order {
+  padding: 0.5rem 2.5rem;
+  color: #fff;
+  background-color: #1c7e4d;
+  font-size: 16px;
+  border-radius: 14px;
+  border: 3px solid burlywood;
+}
+
+.text_price {
+  padding: 0.25rem;
+  font-weight: bold;
+}
+
+.wrapper_no_items {
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  background-color: #cecaca;
+}
+
+.template_day_orders .wrapper_no_items .content_no {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 0 0.5rem;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.template_week_orders .wrapper_no_items .content_no {
+  position: relative;
+  width: 74%;
+  height: 100%;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appealing_registration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 0;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+@media (min-width: 180px) {
+  /*button*/
+  .btn_validate_order,
+  .btn_play_game {
+    cursor: default;
+    width: 100%;
+    height: auto;
+    padding: 0.25rem;
+    color: #fff;
+    background-color: #cbcfcd;
+    font-size: 0.68rem;
+    opacity: 0.58;
+    outline: none;
+    border: none;
+    transition: all 450ms ease-in-out;
+    z-index: 0;
+  }
+
+  .btn_validate_order:active {
+    background-color: #92e7be;
+  }
+
+  .btn_play_game:active {
+    background-color: #d3e05c;
+  }
+
+  .btn_validate_order.impact_more_step {
+    cursor: pointer;
+    opacity: 1;
+    /*  background-color: #6b4d21; */
+    background-color: #1c7e4d;
+    border: 2px solid #d3e05c;
+    letter-spacing: 2px;
+    transition: letter-spacing 650ms ease-out 260ms all 1s ease-in-out;
+    transform: scale(0.94);
+    border-radius: 26%;
+    z-index: 3;
+  }
+
+  .btn_play_game.impact_play {
+    cursor: pointer;
+    opacity: 1;
+    background-color: #f38383;
+    z-index: 3;
+  }
+
+  /*orders*/
+
+  .welcome_orders {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0 0.25rem;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .title_order {
+    font-size: 0.875rem;
+  }
+
+  .breakpoint_orders {
+    width: 80%;
+    margin-top: 5px;
+  }
+
+  .recap_wrapper {
+    width: 100vw;
+    height: auto;
+    margin: 0.75rem auto;
+  }
+
+  .ready_ordered {
+    width: 100%;
+    padding: 0.35rem 0;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 0.15rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    /*  background-color: #b6be9f; */
+    background-color: #d2d3cf;
+  }
+
+  .snaps_inline_0 {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0.5rem;
+  }
+
+  .snaps_inline_0 > * {
+    scroll-snap-align: start;
+  }
+
+  /* available ticket*/
+
+  .available_ticket {
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+
+  .available_ticket_content {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    animation: animGetBackTemplateOrder 3s ease-in-out forward;
+  }
+
+  button.minimize_template {
+    position: relative;
+    right: 2rem;
+    padding: 0.25em 1em;
+    margin: 1rem;
+    color: #fff;
+    background-color: #636262;
+    font-size: clamp(0.72rem, 0.84rem, 1rem);
+    display: block;
+    float: right;
+    border-radius: 24px;
+    border: 2px solid #555353;
+    transition: all 1s ease-in-out;
+  }
+
+  button.minimize_template:hover {
+    color: #f5f5e5;
+    background-color: #333;
+    border: 2px solid #fff;
+    animation: minimizeText 700ms ease-in-out 1s forwards;
+  }
+
+  .breakpoint_ticket {
+    width: 65%;
+    margin-top: 5px;
+  }
+
+  .sample_ticket {
+    width: minmax(180px, 42rem);
+    height: auto;
+    padding: 0.5rem 0;
+    background-color: #fff;
+    font-size: 0.8rem;
+    z-index: 2;
+  }
+
+  .sample_ticket .logo_brand {
+    width: 50px;
+    height: 25px;
+    padding: 0.1rem 0;
+    color: #fff;
+    background-color: #1c7e4d;
+    font-family: "Overlock", cursive;
+    font-size: 0.875rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .header_sample {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header_sample .sample_logo {
+    width: 30%;
+    font-size: 0.65rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .header_sample .current_day_time {
+    width: 30%;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  .header_sample .statement_to_client {
+    display: none;
+    font-size: 0.5rem;
+    width: 30%;
+  }
+
+  .type_sample {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .type_sample > p {
+    width: 35%;
+    font-size: 0.55rem;
+  }
+
+  .type_sample > p + p {
+    width: 5rem;
+    font-size: 0.55rem;
+  }
+
+  .spec_details_orders {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 0;
+    height: auto;
+    font-size: 0.62rem;
+  }
+
+  .spec_details_orders table {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  table tr {
+    width: 100%;
+    padding: 0.25rem 0;
+    height: auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  table tr * {
+    width: 24%;
+    text-align: center;
+  }
+
+  .table_recap {
+    position: relative;
+    width: 100%;
+    height: 25px;
+  }
+
+  .table_recap table {
+    width: 100%;
+    height: 100%;
+  }
+
+  .totalPrice_in {
+    /*  --apply-visibility: hidden; */
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .totalPrice_in .control_radio {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+      " area1  area1  "
+      "area2"
+      "area3";
+    gap: 0.25rem;
+  }
+
+  /* same in TemplateOrder.css*/
+  .input_radio_price {
+    position: relative;
+    top: 0;
+    left: calc(-3%);
+    left: 0;
+    width: 98%;
+    padding: 0.75rem 0 0.5rem;
+    font-size: clamp(0.5rem, 0.68rem, 0.65rem);
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, minmax(75px, 1fr));
+    grid-area: area1;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    margin: 0 auto;
+  }
+
+  /* same in TemplateOrder.css*/
+  .total_bill {
+    position: relative;
+    top: 0rem;
+    height: 0px;
+    padding: 0rem 0 0.5rem;
+    font-size: 23px;
+    font-weight: bold;
+    opacity: 0.95;
+    visibility: hidden;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: area2;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    transition: all 650ms linear;
+  }
+
+  /* same in TemplateOrder.css*/
+  .total_bill.anim_height {
+    position: relative;
+    top: -0.35rem;
+    width: 50%;
+    height: auto;
+    padding: 0.75rem 0 0.5rem;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: 1fr;
+    grid-area: area2;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    transition: all 1.2s ease-in-out;
+  }
+
+  /* same in TemplateOrder.css*/
+  .submit_container {
+    position: relative;
+    top: 0rem;
+    left: 2rem;
+    opacity: 1;
+    visibility: hidden;
+    transition: all 450ms linear;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: area3;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+  }
+
+  /* same in TemplateOrder.css*/
+  .submit_container.addShowBtn {
+    left: 2rem;
+    opacity: 0.8;
+    grid-template-columns: 1fr;
+    grid-area: area3;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    place-items: center;
+    visibility: visible;
+    transition: all 650ms linear;
+  }
+
+  .totalPrice_in .input_radio_price li {
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    /* background-color: #1c7e4d; */
+  }
+
+  .reg_price {
+    position: relative;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    outline: none;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  /* appealing registration */
+  .appeal_reg_wrapper {
+    position: relative;
+    top: 0.5rem;
+    width: 100%;
+    min-height: 220vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    place-items: center;
+  }
+
+  /*order track time*/
+  .order_track_time {
+    position: relative;
+    top: 1rem;
+    height: 70px;
+    padding: 0;
+    margin: 0.5rem 0 1.5rem;
+    font-size: 0.65rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .remaining_track_time {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .post_track_time {
+    width: 100%;
+    height: 68%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .post_track_time li {
+    width: 100%;
+    height: 100%;
+  }
+
+  .post_track_time .time_left {
+    width: 80%;
+    height: 26px;
+    margin: 0 auto;
+    color: #eee;
+    background-color: brown;
+    text-align: center;
+  }
+
+  .address_customers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .address_side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .submit_ticket {
+    width: 100%;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .noti_payment {
+    padding: 0.5rem 0;
+    font-size: 0.62rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .notification {
+    width: 50%;
+    padding: 0.25rem 0;
+    text-decoration: underline;
+  }
+
+  .payment_wrapper {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .btn_payment {
+    width: 3.6rem;
+    padding: 0.25rem 0;
+    background-color: #333;
+    float: right;
+  }
+
+  /*payment methods*/
+
+  .payment_methods {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .payment_methods ul {
+    width: 100%;
+    content: "";
+    position: absolute;
+    left: 0%;
+    transform: translate(-50%, 0%);
+    width: 100vw;
+    padding: 0.5rem;
+    background-color: #ddd;
+    font-size: 1rem;
+    visibility: visible;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .payment_methods ul li {
+    width: 100%;
+    height: 30px;
+    padding-left: 0.5rem;
+    background-color: #1c7e4d;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .img_payment {
+    width: 60vw;
+    height: 22px;
+    margin-top: 0.35rem;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .fa-cc-paypal {
+    position: relative;
+    left: calc(4rem);
+    transform: scale(8, 2);
+  }
+
+  /* sticking template order*/
+
+  .sticking_template_order {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .msg_grateful_order {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 0.92rem;
+    gap: 0.25rem;
+  }
+
+  .msg_grateful_order div {
+    width: 50%;
+    display: flex;
+    flex: 1;
+    text-align: center;
+  }
+
+  .msg_grateful_order > div + div {
+    width: 50%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .msg_grateful_order .grateful_img {
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .msg_grateful_order p {
+    font-size: 0.8rem;
+    text-decoration: underline;
+  }
+
+  /* template slider */
+  .template_slider_wrapper {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  /*Slider component refactoring */
+
+  .slick-prev {
+    left: 0px !important;
+    z-index: 5;
+  }
+  .slick-next {
+    right: 0 !important;
+    z-index: 5;
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50%;
+    background-color: #695369 !important;
+  }
+
+  .slick-dots {
+    bottom: 3px !important;
+    z-index: 5;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 22px !important;
+    line-height: 1;
+    opacity: 0.75;
+  }
+
+  /* orderings of the day */
+
+  .orders_day {
+    position: relative;
+    height: 290px;
+    /* background-color: #c1d7e6;
+    background-color: #afcc6c; */
+    background-color: #b6be9f;
+  }
+
+  .template_day {
+    width: 100%;
+    height: auto;
+    padding: 0rem 0 0.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    grid-gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
+  .snaps_inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0.25rem;
+  }
+
+  .snaps_inline > * {
+    scroll-snap-align: start;
+  }
+
+  /*wrapping New Location button(apply)*/
+  .wrapping_new_location {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+    width: 60%;
+    padding: 1rem;
+    background-color: #3b407e;
+  }
+
+  .figure_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+  }
+
+  .figure_area li {
+    width: 100%;
+    height: 25px;
+    background-color: rgba(59, 63, 126, 0.384);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .figure_area li input {
+    width: 100%;
+    height: 100%;
+    padding: 0.25rem;
+    text-align: left;
+    /*   background-color: rgba(59, 63, 126, 0.384); */
+  }
+
+  .name_area {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgb(97, 57, 64);
+  }
+
+  .control_in_new_direction {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .list_appearance {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    visibility: hidden;
+  }
+
+  .control_in_new_direction li {
+    width: 100%;
+    height: 25px;
+    background-color: rgba(59, 63, 126, 0.384);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .control_in_new_direction li input {
+    width: 100%;
+    height: 100%;
+    padding: 0.25rem;
+    text-align: left;
+  }
+
+  .spread_new_button {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .spread_new_button li {
+    width: 60px;
+    height: 26px;
+    text-align: center;
+  }
+
+  .btn_on_new {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn_on_new.btn_loc_two {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #1c7e4d;
+  }
+
+  .recap_feedback .send_ratings {
+    width: 50%;
+    padding: 0.25rem 0.5rem;
+    color: #eee;
+    opacity: 0.9;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    transform: skewX(-15deg);
+    letter-spacing: 1px;
+    z-index: 5;
+  }
+
+  /*one more step */
+
+  .one_more_step {
+    position: relative;
+    width: 96%;
+    height: auto;
+    background-color: #eee;
+  }
+
+  .one_more_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .first_my_word .small_task {
+    padding: 0.5rem 0.5rem 0 0;
+  }
+
+  .small_task .remind_validation {
+    padding: 0 0.25rem;
+    color: #eee;
+    background-color: #1c7e4d;
+    border: 2px solid #fff;
+  }
+
+  .process_decision {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .no_mind,
+  .yes_sure {
+    padding: 5px 18px;
+  }
+
+  .yes_sure {
+    letter-spacing: 3px;
+    color: #fff;
+    background-color: #1c7e4d;
+    box-shadow: -1px 1px 5px #2ea569;
+  }
+
+  /*calendar week order */
+
+  .template_week_orders {
+    margin: 1rem 0 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .title_week_orders {
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .calendar_orders {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .weeks_day {
+    width: 26%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+
+  .days_week_order {
+    position: relative;
+    top: -0.25rem;
+    left: 0;
+    width: 76%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .days_week_order .days_dish_recap {
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    max-height: 300px;
+    font-size: 0.65rem;
+    overflow-y: auto;
+    overscroll-behavior-block: contain;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 100%;
+    gap: 1rem;
+  }
+
+  /* new orders on the shelf */
+
+  .new_command {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0;
+  }
+
+  .btn_newest_order {
+    padding: 0.25rem;
+    margin-right: 0.25rem;
+    background-color: #1c7e4d;
+  }
+
+  .new_command_number {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: brown;
+    vertical-align: text-top;
+    border: 2px solid #fff;
+  }
+}
+
+@media (min-width: 320px) {
+  button {
+    border-radius: 0px;
+  }
+
+  .btn_clear {
+    width: 80px;
+  }
+
+  .add_meal,
+  .remove_meal {
+    width: 40px;
+    padding: 0.25rem 0;
+    border-radius: none;
+  }
+
+  .title_order {
+    font-size: 0.975rem;
+  }
+
+  /*available ticket*/
+
+  .btn_validate_order,
+  .btn_play_game {
+    font-size: 0.75rem;
+  }
+
+  .sample_ticket .logo_brand {
+    font-size: 1rem;
+  }
+
+  .header_sample .current_day_time {
+    position: relative;
+    left: -0.35rem;
+    width: 68%;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header_sample .statement_to_client {
+    font-size: clamp(0.55rem, 0.6rem, 0.7rem);
+    width: 28%;
+    text-align: center;
+    display: block;
+  }
+
+  .type_sample > p {
+    font-size: 0.75rem;
+  }
+
+  .type_sample > p + p {
+    width: 46%;
+    padding-right: 0.25rem;
+    font-size: 0.72rem;
+    text-align: right;
+  }
+
+  .spec_details_orders {
+    font-size: 0.75rem;
+  }
+
+  .total_bill.anim_height {
+    display: grid;
+  }
+
+  .submit_container {
+    left: 0rem;
+    margin: 0.25rem 0 0.5rem;
+    justify-content: center;
+    transform: scale(0.2) translate(-30px, 0);
+    grid-area: area3;
+    grid-column: 3 / span 1;
+  }
+
+  .submit_container.addShowBtn {
+    left: 0rem;
+    margin: 0.25rem 0 0.5rem;
+    transform: scale(1) translate(5px, 0);
+    grid-area: area3;
+    grid-column: 3 / span 1;
+  }
+
+  .order_track_time {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .noti_payment {
+    font-size: 0.75rem;
+  }
+
+  .btn_payment {
+    width: auto;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /*sticking template*/
+  .msg_grateful_order div {
+    align-items: center;
+  }
+
+  /*orders days*/
+  .title_template_orders {
+    padding: 0 0 0.25rem 1rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .ready_ordered {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+  }
+
+  .ready_ordered {
+    width: 100%;
+    padding: 0.35rem 0.25rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 230px));
+    grid-auto-flow: unset;
+    grid-auto-columns: 100%;
+    grid-auto-columns: auto;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    background-color: #d2d3cf;
+  }
+
+  /*available ticket*/
+
+  .btn_validate_order,
+  .btn_play_game {
+    font-size: 0.875rem;
+  }
+
+  .sample_ticket {
+    width: 80vw;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3) yellow;
+  }
+
+  .sample_ticket .logo_brand {
+    font-size: 1.25rem;
+  }
+
+  .header_sample .current_day_time {
+    font-size: 0.875rem;
+  }
+
+  .type_sample > p {
+    font-size: 0.8rem;
+  }
+
+  .type_sample > p + p {
+    width: 46%;
+    padding-right: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .spec_details_orders {
+    font-size: 0.875rem;
+  }
+
+  .input_radio_price {
+    font-size: clamp(0.8rem, 0.9rem, 1rem);
+  }
+
+  .total_bill,
+  .total_bill.anim_height {
+    font-size: clamp(0.92em, 1.8em, 2.4em);
+  }
+
+  .order_track_time {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .noti_payment {
+    font-size: 0.75rem;
+  }
+
+  .btn_payment {
+    width: auto;
+    padding: 0.25rem 1rem;
+  }
+
+  /*sticking template*/
+
+  .msg_grateful_order {
+    font-size: 1.1rem;
+  }
+
+  .msg_grateful_order .grateful_img {
+    height: 140px;
+  }
+
+  /*Slider component style*/
+
+  .slick-prev,
+  .slick-next {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50%;
+    background-color: #695369 !important;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 28px !important;
+    line-height: 1;
+    opacity: 0.75;
+  }
+
+  .slick-dots li button::before {
+    font-size: 8px !important;
+  }
+
+  /*order day*/
+  .template_day {
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fill, min-content);
+    grid-gap: 0.75rem;
+  }
+
+  .day_dish_recap .dish_table {
+    font-size: 0.7rem;
+  }
+
+  .day_dish_recap .dish_topic {
+    height: 25px;
+  }
+
+  .day_dish_recap .dish_country {
+    padding: 0 0.5rem 0.25rem;
+  }
+
+  .day_dish_recap .dish_sub_operation {
+    padding: 0;
+  }
+  .day_dish_recap .dish_order_desc {
+    position: relative;
+    top: -0.35rem;
+  }
+
+  /*new pending ordered dishes*/
+
+  .btn_sub {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn_newest_order {
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    background-color: #1c7e4d;
+  }
+}
+
+@media (min-width: 800px) {
+  /*  available ticket */
+
+  .btn_validate_order,
+  .btn_play_game {
+    font-size: 0.875rem;
+    width: 35%;
+  }
+
+  .type_sample > p {
+    font-size: 0.98rem;
+  }
+
+  .type_sample > p + p {
+    font-size: 0.92rem;
+  }
+
+  .sample_ticket {
+    width: 78vw;
+    margin: 1rem auto;
+    font-size: 1rem;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3) yellow;
+  }
+
+  .sample_ticket .logo_brand {
+    font-size: 1.25rem;
+  }
+
+  .header_sample .current_day_time {
+    font-size: 0.875rem;
+  }
+
+  .type_sample {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .spec_details_orders {
+    font-size: 0.875rem;
+  }
+
+  table tr {
+    font-size: 16px;
+  }
+
+  .order_track_time {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .submit_ticket {
+    gap: 1rem;
+  }
+
+  .noti_payment {
+    font-size: 0.75rem;
+  }
+
+  .btn_payment {
+    width: 9rem;
+    padding: 0.25rem;
+  }
+
+  /* sticking template */
+
+  .msg_grateful_order .grateful_img {
+    height: 186px;
+  }
+
+  .msg_grateful_order div {
+    width: 35%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .msg_grateful_order p {
+    font-size: 0.9rem;
+  }
+
+  /* order day */
+
+  .template_day {
+    padding: 0.35rem 0.5rem;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fill, 14rem);
+    grid-gap: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .input_radio_price {
+    position: relative;
+    top: 0;
+    left: -0.5rem;
+    font-size: clamp(0.95rem, 1rem, 1.12rem);
+    grid-template-columns: repeat(2, minmax(80px, 1fr));
+  }
+
+  .msg_grateful_order {
+    font-size: 1.25rem;
+  }
+
+  .msg_grateful_order .grateful_img {
+    height: 210px;
+  }
+  .msg_grateful_order p {
+    width: 40%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+
+  .submit_container {
+    transform: scale(0.2) translate(150px, 0);
+  }
+
+  /* appealing registration */
+  .appeal_reg_wrapper {
+    position: relative;
+    top: 0.5rem;
+    width: 100%;
+    min-height: 75em;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    place-items: center;
+  }
+
+  /*order day*/
+
+  .orders_day {
+    width: calc(100% - 16px);
+  }
+
+  /*ordered in week*/
+
+  .dish_table {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1.25rem;
+  }
+
+  .title_week_orders {
+    font-size: 1.1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .days_week_order {
+    position: relative;
+    top: -0.25rem;
+    left: -0.75rem;
+    width: 70%;
+  }
+
+  /*new pending ordered dishes*/
+
+  .btn_sub {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .btn_newest_order {
+    padding: 0.25rem 1rem;
+    margin-right: 1rem;
+  }
+
+  .new_command_number {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@keyframes animhideTemplateOrder {
+  0% {
+    transform: scale(0.95) rotate(90deg);
+    opacity: 0.95;
+  }
+
+  35% {
+    transform: scale(0.65) rotate(180deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(0.35) rotate(270deg);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(0.2) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animGetBackTemplateOrder {
+  0% {
+    transform: scale(0.2) rotate(270deg);
+    opacity: 0.95;
+  }
+
+  35% {
+    transform: scale(0.65) rotate(180deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(0.35) rotate(90deg);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(0.2) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes minimizeText {
+  0% {
+    transform: rotateX(180deg);
+    opacity: 0.88;
+  }
+  100% {
+    transform: rotateX(360deg);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,310 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* .flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+
+@media (min-with: 180px) {
+  .dishGiven {
+    width: 300px;
+    height: 290px;
+    background-color: #24a163;
+  }
+
+  .dish {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-row: span 3;
+    grid-template-columns: subgrid;
+  }
+  /* grid auto rows:160px auto auto (3 elements) */
+
+  .dish_content {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0.5rem 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: #224721;
+  }
+
+  .my_dish_img {
+    width: 100%;
+    height: 170px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .spec_meal {
+    /*   width: 100vw; */
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.875em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .spec_meal .name_meal {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    flex: 1;
+    background-color: #24a163;
+  }
+
+  .spec_meal div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: right;
+    text-align: right;
+    flex: 1;
+    gap: 0.25rem;
+  }
+
+  .fa-star,
+  .fa-star-half-stroke {
+    transform: scale(0.58);
+  }
+
+  .spec_meal .ratings {
+    position: relative;
+    left: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+  }
+
+  .spec_country p {
+    width: 100%;
+    padding: 0.75rem 0 0.5rem;
+    background-image: url("../assets/images/susan-gold-unsplash.jpg");
+    background-clip: text;
+    font-size: 0.875em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .spec_ingredients_h {
+    width: 100vw;
+    padding: 0.5rem;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .spec_ingredients {
+    width: 100vw;
+    padding: 0.5rem;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .side_ing {
+    position: relative;
+    top: -0.75rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 0.25rem;
+  }
+
+  .title_ing {
+    width: 90px;
+    padding: 0.25rem 0;
+    font-size: 0.975em;
+    border-bottom: 1px solid black;
+  }
+
+  .side_order {
+    width: 100%;
+  }
+
+  .side_ct_order {
+    width: 100%;
+    height: 66px;
+    gap: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .side_ct_order li {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .side_ct_order .dish_price,
+  .side_ct_order .btn_order {
+    width: 60%;
+    padding: 0.25rem 0;
+    color: #fff;
+    background-color: #213547;
+    display: flex;
+    justify-content: center;
+  }
+
+  .side_ct_order .side_btn_order {
+    background-color: rgb(94, 41, 41);
+  }
+
+  .ingredients_used {
+    width: 5.5rem;
+    height: 100%;
+    font-size: 0.72rem;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+  }
+
+  .btn_order {
+    padding: 0.1rem 0.5rem;
+    color: #eee;
+    color: #24a163;
+    background-image: linear-gradient(
+      to bottom,
+      #444642,
+      #40433d,
+      #3d3f39,
+      #393c34,
+      #363930
+    );
+    border-radius: 5px;
+    border: 2px solid #213547;
+  }
+}
+
+@media (min-width: 316px) {
+  .btn {
+    font-size: 17px;
+  }
+
+  .my_dish_img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .spec_meal {
+    font-size: 1em;
+  }
+
+  .fa-star,
+  .fa-star-half-stroke {
+    transform: scale(0.68);
+  }
+
+  .spec_meal .name_meal {
+    width: 60%;
+    padding-left: 0rem;
+  }
+
+  .spec_meal ul {
+    width: 100%;
+  }
+
+  .spec_country p {
+    font-size: 1.25em;
+  }
+
+  .title_ing {
+    width: 120px;
+    font-size: 1.25em;
+  }
+
+  .ingredients_used {
+    width: 6.5rem;
+    font-size: 1rem;
+  }
+
+  .btn_order {
+    width: 7rem;
+    padding: 0.3rem;
+  }
+}
+
+@media (min-width: 430px) {
+  .my_dish_img {
+    height: 200px;
+  }
+
+  .spec_country p {
+    padding: 0.5rem 0 0.5rem;
+  }
+
+  .spec_ingredients_h {
+    padding: 0.5rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+}
+
+@media (min-width: 1054px) {
+  .btn {
+    font-size: 14px;
+  }
+
+  .my_dish_img {
+    width: 200px;
+    height: 160px;
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  .spec_country p {
+    padding: 0.25rem 0 0.5rem;
+    font-size: 0.9em;
+  }
+
+  .spec_meal .rate_content .ratings_score {
+    padding-right: 0.58rem;
+  }
+
+  .spec_ingredients_h {
+    padding: 0.25rem 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .title_ing {
+    width: 72px;
+    font-size: 0.75em;
+  }
+
+  .ingredients_used {
+    width: 4rem;
+    font-size: 0.85rem;
+  }
+
+  .btn_order {
+    width: 5rem;
+  }
+}

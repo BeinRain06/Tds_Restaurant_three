@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  font-size: 15px;
+  color: #fff;
+  background: black;
+  opacity: 1;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  transition: all 1s ease-in-out;
+}
+
+.btn:active {
+  opacity: 0.9;
+  color: #757474;
+  font-size: 14px;
+}
+
+.btn_order,
+.btn_ordered {
+  padding: 0.1rem 0.5rem;
+  color: #eee;
+  background-image: linear-gradient(
+    to bottom,
+    #444642,
+    #40433d,
+    #3d3f39,
+    #393c34,
+    #363930
+  );
+  border-radius: 5px;
+  border: 2px solid #213547;
+}
+
+.btn_ordered {
+  background-image: linear-gradient(
+    to bottom,
+    #74994e,
+    #5f813d,
+    #4f6e2f,
+    #496e24,
+    #3f631c
+  );
+  border: 2px solid #eaeff3;
+}
+
+.order_confirmation {
+  position: relative;
+  display: flex;
+  flex-basis: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn_confirm_order,
+.btn_reject_order {
+  width: 3.4rem;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_con_order,
+.btn_rej_order {
+  width: 3.4rem;
+  color: #fff;
+  font-size: clamp(0.65rem, 0.72rem, 0.75rem);
+  /*  background-color: #1c7e4d; */
+  background-color: #3cb617;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  animation: animRejectConfirm 4.1s ease-in-out forwards;
+}
+
+.btn_rej_order {
+  color: #444;
+  background-color: #d1cbbe;
+  border: 2px solid #333;
+  /*  animation: animReject 4.1s ease-in-out forwards; */
+}
+
+@media (min-width: 180px) {
+  .btn_wrap_order {
+    width: 100%;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 316px) {
+  .btn {
+    font-size: 17px;
+  }
+
+  .btn_order,
+  .btn_ordered {
+    width: 7rem;
+    padding: 0.3rem;
+  }
+}
+
+@media (min-width: 1054px) {
+  .btn {
+    font-size: 14px;
+  }
+  .btn_order,
+  .btn_ordered {
+    width: 5rem;
+  }
+}
+
+/* @keyframes animReject {
+  0% {
+    visibility: hidden;
+    opacity: 0.45;
+    border-radius: 40%;
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(-120deg);
+    visibility: visible;
+    opacity: 0.85;
+  }
+
+  75% {
+    transform: rotate(-60deg) scale(0.5);
+    visibility: visible;
+    opacity: 0.72;
+    border-radius: 40%;
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+    visibility: visible;
+    opacity: 1;
+    border-radius: 5px;
+  }
+} */
+
+@keyframes animRejectConfirm {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.45);
+    border-radius: 10%;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 5px;
+  }
+}
