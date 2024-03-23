@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const cors = require("cors");
+var cors = require("cors");
 const Meal = require("../models/meal");
 const Category = require("../models/category");
 const RatedMeal = require("../models/rated-meal");
@@ -18,6 +18,7 @@ router.use(
       "https://tds-restaurant-three-ui.vercel.app",
       "https://tds-restaurant-three.vercel.app/",
     ],
+    preflightContinue: false,
     credentials: true,
   })
 );

@@ -1,10 +1,26 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
 
 const Category = require("../models/category");
 
 // middleware that is specific to this router
 router.use(express.urlencoded({ extended: false }));
+
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
 
 // FOR POST
 router.use(async (req, res) => {

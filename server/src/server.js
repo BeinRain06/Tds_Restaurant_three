@@ -27,7 +27,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
-const cors = require("cors");
+var cors = require("cors");
 
 require("dotenv").config();
 
@@ -40,6 +40,7 @@ app.use(
       "https://tds-restaurant-three-ui.vercel.app",
       "https://tds-restaurant-three.vercel.app/",
     ],
+    preflightContinue: false,
     credentials: true,
   })
 );
