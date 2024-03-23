@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const cors = require("cors");
+var cors = require("cors");
 
 const Payment = require("../models/payment");
 

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const cors = require("cors");
+var cors = require("cors");
 
 const Category = require("../models/category");
 
@@ -9,7 +9,7 @@ router.use(express.urlencoded({ extended: false }));
 
 const cors = require("cors");
 
-app.use(
+router.use(
   cors({
     origin: [
       "http://localhost:5000",
