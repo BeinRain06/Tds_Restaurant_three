@@ -5,7 +5,7 @@ export async function getMeals() {
 
   try {
     const res = await axios.get(api_url);
-    console.log("responseMeal: ", res);
+    // console.log("responseMeal: ", res);
     let meals = [];
     meals = res.data.data;
     return meals;

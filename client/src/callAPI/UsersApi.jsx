@@ -65,7 +65,7 @@ export async function userLogging({ email, password }) {
 
     userIdentity = res.data.data;
 
-    console.log("userIdentity return after logging", userIdentity);
+    // console.log("userIdentity return after logging", userIdentity);
 
     return userIdentity;
   } catch (err) {
@@ -92,7 +92,7 @@ export async function updatingRegistering(email) {
     );
 
     userIdentity = res.data.data;
-    console.log(userIdentity);
+    // console.log(userIdentity);
 
     return userIdentity;
   } catch (err) {

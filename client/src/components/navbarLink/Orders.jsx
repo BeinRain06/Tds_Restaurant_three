@@ -44,8 +44,6 @@ import Slider from "react-slick";
 }
 
 function Orders() {
-  // const dispatch = useDispatch();
-
   const {
     state: { meals, user, indexDayFormat, ordersWeek, ordersDay },
     handleWelcome,
@@ -134,7 +132,7 @@ function Orders() {
 
   const firstStepPayment = async () => {
     return await new Promise(async (resolve) => {
-      console.log("inside this order:", thisOrder);
+      // console.log("inside this order:", thisOrder);
       const newPayment = await postPayment(
         thisOrder._id,
         "MTN",
@@ -148,8 +146,6 @@ function Orders() {
     });
   };
 
-  // HERE ===>  NEXT FUNCTION TO IMPLEMENT ACTION   <=== HERE
-
   const validateThisOrder = () => {
     //Pre-Actions
     validateRef.current.classList.remove("impact_more_step");
@@ -159,8 +155,6 @@ function Orders() {
     setTimeout(async () => {
       await updateDataTemplate();
     }, 1000);
-
-    /* handleOrdersWeek(orderSpecsCurrent); */
 
     callTimer(70); // time set in s  <--- // change to "7200" --> (for 2 hours) --->;
 
@@ -193,7 +187,7 @@ function Orders() {
     let newDataTemplateOrdersDay;
     initPayment = await firstStepPayment();
 
-    console.log("initPayment:", initPayment);
+    // console.log("initPayment:", initPayment);
     setMyPaymentInit(initPayment);
 
     const indexPayment = countClickValidate + 1;
@@ -212,7 +206,7 @@ function Orders() {
       orderSpecsCurrent: orderSpecsCurrent,
     };
 
-    console.log("dataRecordObj:", dataRecordObj);
+    // console.log("dataRecordObj:", dataRecordObj);
 
     const indexTemp = countClickValidate + 1;
 
@@ -239,11 +233,9 @@ function Orders() {
 
   const handleMoveToValidation = () => {
     handleIsOneMoreStep(false);
-    /* handleApplyText("Minimize"); */
     setApplyColor("gray");
     handleTicketNumber((totalPrice - 3).toString(16));
     handleHoursPrint(moment().format("hh:mm a"));
-    /*  handleTimerIn("02:00:00"); */
     setOurTimer("02:00:00");
     validateRef.current.classList.add("impact_more_step");
   };
@@ -254,7 +246,7 @@ function Orders() {
     if (e.target.id === "reg_price_2") {
       const cookies = getCookies();
       const userId = cookies.userId;
-      console.log("cookies userId:", userId);
+      // console.log("cookies userId:", userId);
 
       if (userId === undefined) {
         setTimeout(() => {
@@ -267,9 +259,8 @@ function Orders() {
         return;
       } else {
         handleFirstTimeOrder(false);
-        /*   const fetchingWeek = await fetchOrdersWeek(userId); */
         if (thisOrder._id !== undefined) {
-          console.log("saved and updated my order (thisOrder):", thisOrder);
+          // console.log("saved and updated my order (thisOrder):", thisOrder);
 
           const newChange = await updateThisTotalPriceOrder(
             thisOrder._id,
@@ -279,26 +270,23 @@ function Orders() {
           handleThisOrder(newChange);
 
           setTimeout(() => {
-            console.log("new this order send back:", newChange);
+            // console.log("new this order send back:", newChange);
           }, 1000);
 
           setShowTotalPrice(newChange.totalPrice);
           handleTotalPrice(newChange.totalPrice);
         } else if (thisOrder._id === undefined) {
-          console.log("user data saved:", user);
           const newTakenOrder = await initiateOrder(
             user.userEmail,
             orderSpecsCurrent
           );
-
-          console.log("new taken order command:", newTakenOrder);
 
           handleThisOrder(newTakenOrder);
 
           setShowTotalPrice(newTakenOrder.totalPrice);
 
           setTimeout(() => {
-            console.log("new taken order command:", newTakenOrder);
+            // console.log("new taken order command:", newTakenOrder);
           }, 1000);
           handleTotalPrice(newTakenOrder.totalPrice);
         }
@@ -309,7 +297,7 @@ function Orders() {
     } else if (e.target.id === "reg_price_1") {
       setShowTotalPrice("_" + " " + "_" + " " + "_" + " " + "_");
       setTimeout(() => {
-        console.log("update showTotalPrice");
+        // console.log("update showTotalPrice");
       }, 2500);
 
       applyOrderRef.current.classList.remove("addShowBtn");
@@ -390,14 +378,6 @@ function Orders() {
 
       handleTimerIn(newSendTimer);
 
-      /*  setOurTimer(
-        (hrs > 9 ? hrs : "0" + hrs) +
-          ": " +
-          (min > 9 ? min : "0" + min) +
-          ":" +
-          (sec > 9 ? sec : "0" + sec)
-      ); */
-
       setStartingTestTimer(
         (hrs > 9 ? hrs : "0" + hrs) +
           ": " +
@@ -465,8 +445,6 @@ function Orders() {
   }, []); */
 
   useEffect(() => {
-    console.log("present navbar");
-    console.log("present orderDay:", ordersDay);
     setTimeout(() => {
       handleWelcome(false);
     }, 3000);
@@ -475,22 +453,21 @@ function Orders() {
   useEffect(() => {}, [indexWeekDay]);
 
   useEffect(() => {
-    console.log("this place redirect to login or register form!");
+    // console.log("this place redirect to login or register form!");
   }, [firstTimeOrder]);
 
   useEffect(() => {
-    console.log(
+    /*  console.log(
       "This have to Update The quantity and mini Total Price Template Ticket!"
-    );
+    ); */
 
     if (Object.keys(dataTemplatesOrdersDay).length === 1) {
       setDataTemplate(dataTemplatesOrdersDay[0]);
     }
-    console.log("timerIn details", timerIn);
   }, [orderSpecsCurrent, dataTemplatesOrdersDay, applyText]);
 
   useEffect(() => {
-    console.log("Update Week and Day Show Command");
+    // console.log("Update Week and Day Show Command");
     const ArrWeek = Object.keys(ordersWeek).map((key, i) => {
       return ordersWeek[key];
     });
@@ -501,9 +478,6 @@ function Orders() {
 
     setMyWeekOrder(ArrWeek);
     setMyDayOrder(ArrDay);
-
-    console.log("my week order:", ordersWeek);
-    console.log("my day order:", ordersDay);
   }, [ordersDay, ordersWeek]);
 
   return (

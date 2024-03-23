@@ -22,7 +22,7 @@ export async function postRatedMeal(mealId, rating, feedback) {
 
     const response = res.data.data;
 
-    console.log("new First Time POST in rateMead collection:", res.data.data);
+    // console.log("new First Time POST in rateMead collection:", res.data.data);
 
     return response;
   } catch (err) {
@@ -48,7 +48,7 @@ export async function updateRatedMeal(ratedId, rating, newFeedback) {
       }
     );
 
-    console.log("my API after Updating in Rated Meal :", response);
+    // console.log("my API after Updating in Rated Meal :", response);
 
     return response;
   } catch (err) {

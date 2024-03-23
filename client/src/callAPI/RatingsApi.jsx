@@ -10,7 +10,7 @@ export async function getAllRatings() {
 
     const allRatings = await res.data.data; //res.data(axios res) - .data (structured data response in backend)
 
-    console.log("ratings allRatings:", allRatings);
+    // console.log("ratings allRatings:", allRatings);
 
     return allRatings;
   } catch (err) {
@@ -27,7 +27,7 @@ export async function getThisUserRatings(userId) {
 
     const ratings = res.data.data; //res.data(axios res) - .data (structured data response in backend)
 
-    console.log("ratings:", ratings);
+    // console.log("ratings:", ratings);
 
     return ratings;
   } catch (err) {
@@ -55,7 +55,7 @@ export async function ratingIdentity(userId, triggeredRatedMealId) {
 
     const rating = response.data.data;
 
-    console.log("new First Time POST in Rating collection:", rating);
+    // console.log("new First Time POST in Rating collection:", rating);
 
     return rating;
   } catch (err) {
@@ -82,7 +82,7 @@ export async function ratingUpdation(ratingId, ratedIds) {
 
     const updateOnfire = response.data.data;
 
-    console.log("new First Time POST in Rating collection:", updateOnfire);
+    // console.log("new First Time POST in Rating collection:", updateOnfire);
 
     return updateOnfire;
   } catch (err) {
@@ -112,7 +112,7 @@ export async function updateMealScoreRating(mealId, resultArrRating) {
 
     const newMealRating = res.data.data;
 
-    console.log("new Meal RATINGS --API:", newMealRating);
+    // console.log("new Meal RATINGS --API:", newMealRating);
     return newMealRating;
   } catch (err) {
     console.log(err);

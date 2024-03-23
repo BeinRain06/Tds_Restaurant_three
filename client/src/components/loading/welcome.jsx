@@ -23,7 +23,7 @@ function Welcome() {
     let newOrdersFetchWeek;
     let newOrdersFetchDay;
 
-    console.log("ordersFetch:", ordersFetch);
+    // console.log("ordersFetch:", ordersFetch);
 
     if (ordersFetch.length !== 0) {
       ordersFetch?.map((eltOrder, i) => {

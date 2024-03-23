@@ -16,9 +16,7 @@ function Events() {
   const { handleWelcome } = useContext(MealContext);
 
   useEffect(() => {
-    console.log("present navbar");
     setTimeout(() => {
-      /*  dispatch(mealActions.handleWelcome(false)); */
       handleWelcome(false);
     }, 3000);
   }, []);

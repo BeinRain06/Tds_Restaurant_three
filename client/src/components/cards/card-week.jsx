@@ -34,10 +34,10 @@ function CardWeek() {
 
   const handleWhileShiftingDay = (e) => {
     const idTriggered = e.target.parentElement.parentElement.id;
-    console.log("e target:", e.target.parentElement.parentElement);
+    // console.log("e target:", e.target.parentElement.parentElement);
 
     liArrRef.map((itemRef, i) => {
-      console.log("itemRef Current:", itemRef);
+      // console.log("itemRef Current:", itemRef);
 
       if (itemRef.current.id === idTriggered) {
         itemRef.current.classList.add("active_day");

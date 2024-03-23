@@ -27,15 +27,15 @@ function LoadingLogSession({
 
   const updateLogSession = async () => {
     const userInfo = await updateUserData();
-    console.log("user here:", userInfo);
+    // console.log("user here:", userInfo);
     const myOrder = await updateOrderedSpecData(userInfo);
-    console.log("this order once again here:", myOrder);
+    // console.log("this order once again here:", myOrder);
     updatefieldTemplate(myOrder);
   };
 
   const updateUserData = async () => {
     let { email, password } = loginData;
-    console.log("loginData:", loginData);
+    // console.log("loginData:", loginData);
 
     const userInfo = await sendLoggingData({ email, password });
     return userInfo;
@@ -44,13 +44,13 @@ function LoadingLogSession({
   const updateOrderedSpecData = async (userInfo) => {
     const myOrder = await updateUserandInitOrder(userInfo);
     setTimeout(() => {
-      console.log("updating ordered specs data!");
+      // console.log("updating ordered specs data!");
     }, 2000);
     return myOrder;
   };
 
   const sendLoggingData = async ({ email, password }) => {
-    console.log(`that email: ${email}, that password:  ${password}`);
+    // console.log(`that email: ${email}, that password:  ${password}`);
     const res = await userLogging({ email, password });
 
     return res;
@@ -70,22 +70,18 @@ function LoadingLogSession({
 
     const userEmail = userInfo.userEmail;
 
-    console.log("user email Log session", userEmail);
-
     let myOrderIn;
 
     myOrderIn = await initThatOrder(userEmail);
 
     handleThisOrder(myOrderIn);
 
-    console.log("that result here:", myOrderIn);
-    myOrderIn;
     return myOrderIn;
   };
 
   const updatefieldTemplate = (myOrder) => {
     setTimeout(async () => {
-      console.log("this order in context:", thisOrder);
+      // console.log("this order in context:", thisOrder);
 
       let totalPriceIn = catchTotalPrice(myOrder);
 
@@ -113,7 +109,7 @@ function LoadingLogSession({
 
   const catchTotalPrice = (myOrder) => {
     let total = myOrder.totalPrice.toString();
-    console.log("thisorder total price here :", total);
+    // console.log("thisorder total price here :", total);
     let totalArr = total.split(" ");
     let output = "";
     totalArr.map((elt) => {
@@ -124,7 +120,7 @@ function LoadingLogSession({
 
   useEffect(() => {
     setTimeout(async () => {
-      console.log("updating Orders Specification when logging!");
+      // console.log("updating Orders Specification when logging!");
       await updateLogSession();
     }, 3000);
   }, []);

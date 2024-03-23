@@ -65,15 +65,13 @@ export async function postPayment(orderId, account, codePayment, totalPriceIn) {
 
     // newPayment = await res.data;
 
-    console.log("newPayment initialize...", response);
+    // console.log("newPayment initialize...", response);
     //send back payment context Api right function
     return response;
   } catch (err) {
     console.log(err);
   }
 }
-
-// ---> HERE FURTHER ADD PART FUNCTION (UPDATE REQUEST) TO FINALIZE THE PAYMENT
 
 //FOR POST
 export async function endPayment(paymentId, account, amountBill) {
@@ -99,7 +97,7 @@ export async function endPayment(paymentId, account, amountBill) {
 
     endPayment = res.data.data;
 
-    console.log("newPayment completed", endPayment);
+    // console.log("newPayment completed", endPayment);
     //send back payment context Api right function
     return endPayment;
   } catch (err) {

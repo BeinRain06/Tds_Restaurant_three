@@ -1,9 +1,5 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-
-/* import { getMeals } from "../../callAPI/MealsApi.jsx"; */
-
 import { MealContext } from "../../services/context/MealsContext.jsx";
 import { TemplateContext } from "../../services/context/TemplateContext.jsx";
 
@@ -13,10 +9,6 @@ import Loading from "../loading/loading.jsx";
 import "./Home.css";
 
 function Home() {
-  /*  const {
-    state: { meals, meats, seaFoods, vegetarians, desserts },
-  } = useContext(MealContext); */
-
   const {
     state: { meals, meats, seaFoods, desserts, vegetarians, welcome },
   } = useContext(MealContext);
@@ -32,16 +24,12 @@ function Home() {
       const removeLoading = (timeset) => {
         if (loading) {
           setTimeout(async () => {
-            console.log("Loading ...");
+            // console.log("Loading ...");
 
             await setLoading(false);
           }, timeset);
         }
       };
-
-      console.log("meals:", meals);
-      console.log("orderSpecsurrent seen by home:", orderSpecsCurrent);
-      console.log("welcome", welcome);
 
       if (meals.length === 0) {
         removeLoading(6000);

@@ -71,7 +71,7 @@ export const mealActions = mealSplice.actions;
 //export Fn reporting entire state
 
 export const meals_section = (state) => {
-  console.log("state mealPrime", state);
+  // console.log("state mealPrime", state);
   return state.mealPrime.meals;
 };
 

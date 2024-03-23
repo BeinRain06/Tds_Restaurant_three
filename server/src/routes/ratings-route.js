@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
-const moment = require("moment");
 
 /* const RatingUser = require("../models/rating-user");
  */
@@ -22,6 +21,8 @@ router.use(
       "http://localhost:5000",
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
     ],
     credentials: true,
   })
@@ -31,8 +32,6 @@ router.use(
 router.get("/", async (req, res) => {
   try {
     const ratings = await Rating.find().populate("ratedMeals");
-
-    console.log("results ratings OOH:", ratings);
 
     if (ratings.length !== 0) {
       return res.status(200).json({ success: true, data: ratings });
@@ -59,8 +58,6 @@ router.get("/rating:userId", async (req, res) => {
     );
 
     if (rating !== null) {
-      console.log("rated Meal Items back - end :", rating);
-
       return res.status(200).json({ success: true, data: rating });
     } else {
       return res.status(200).json({ success: true, data: {} });
@@ -89,8 +86,6 @@ router.post("/rating", async (req, res) => {
 
     newRating = await newRating.save();
 
-    console.log("newRating :", newRating);
-
     res.json({ success: true, data: newRating });
   } catch (err) {
     res.status(500).json({
@@ -112,8 +107,6 @@ router.post("/rating", async (req, res) => {
       },
       { new: true }
     ).populate("ratedMeals");
-
-    console.log("updateMyRating in route :", updateMyRating);
 
     res.json({ success: true, data: updateMyRating });
   } catch (err) {
@@ -163,7 +156,7 @@ router.put("/newratings/meal:mealId", async (req, res) => {
     const occurenceNoteArr = Object.values(occurence);
 
     const maxOccurence = occurenceNoteArr.reduce((acc, val, i) => {
-      console.log("acc :", acc);
+      /* console.log("acc :", acc); */
       const newMax = val.count <= acc?.count ? acc : val;
       return newMax;
     }, {});

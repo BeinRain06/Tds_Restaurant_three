@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const templateSlice = createSlice({
@@ -220,10 +219,10 @@ export const payment_section = (state) => {
 };
 
 export const orderSpecsCurrent_section = (state) => {
-  console.log(
+  /*  console.log(
     "current state orderSpecsCurrent",
     state.orderPrime.orderSpecsCurrent
-  );
+  ); */
   return state.orderPrime.orderSpecsCurrent;
 };
 

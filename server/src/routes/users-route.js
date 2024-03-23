@@ -103,8 +103,6 @@ router.post("/register", async (req, res) => {
     res.cookie("userId", { userId }, { httpOnly: true, maxAge: maxAge });
 
     res.status(200).json({ success: true, data: user });
-
-    console.log(`token - ${user.name} :`, token);
   } catch (err) {
     res
       .status(500)
@@ -124,8 +122,6 @@ router.post("/login", async (req, res) => {
 
     const user = await User.findOne({ email: req.body.email });
 
-    console.log("this User:", user);
-
     const secret = process.env.secret;
 
     if (!user) {
@@ -143,9 +139,6 @@ router.post("/login", async (req, res) => {
       const token = createToken(user.id, user.isAdmin);
       res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge });
       res.cookie("userId", userId, { httpOnly: false, maxAge: maxAge });
-
-      console.log("token send:", token);
-      console.log(`User ${user.name} Authenticated!`);
 
       return res.status(200).json({
         success: true,
@@ -201,8 +194,6 @@ router.put("/register", async (req, res) => {
       const maxAge = 3 * 1000 * 60 * 60 * 24; // 3days in ms
       //jwt signing
       const token = createToken(user.id, user.isAdmin);
-      res.cookie("jwt", { token }, { httpOnly: true, maxAge: maxAge });
-      res.cookie("userId", { userId }, { httpOnly: true, maxAge: maxAge });
 
       return res.status(200).json({
         success: true,

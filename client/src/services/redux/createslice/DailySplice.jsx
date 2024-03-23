@@ -84,8 +84,6 @@ const dailySplice = createSlice({
 //export actions changing state
 export const dailyActions = dailySplice.actions;
 
-console.log("dailySplice:", dailySplice);
-
 export const selectMeats_section = (state) => {
   return state.dailyPrime.selectMeats;
 };

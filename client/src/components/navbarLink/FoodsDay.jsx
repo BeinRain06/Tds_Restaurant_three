@@ -41,43 +41,27 @@ function FoodsDay() {
   const selectSquareFoods = async (e) => {
     console.log(e.target.parentElement);
 
-    /* setLoading(true); */
     let mealCategory;
 
     if (e.target.parentElement.getAttribute("data-meal") === "Meats") {
       mealCategory = "Meats";
-
-      /* setTimeout(async () => {
-        await handleEndThisVar("Meals");
-      }, 3000); */
     } else if (
       e.target.parentElement.getAttribute("data-meal") === "Seafoods"
     ) {
       mealCategory = "Seafoods";
-      /*  setTimeout(async () => {
-        await handleEndThisVar("Seafoods");
-      }, 3000); */
     } else if (
       e.target.parentElement.getAttribute("data-meal") === "Vegetarians"
     ) {
       mealCategory = "Vegetarians";
-      /*   setTimeout(async () => {
-        await handleEndThisVar("Vegetarians");
-      }, 3000); */
     } else if (
       e.target.parentElement.getAttribute("data-meal") === "Desserts"
     ) {
       mealCategory = "Desserts";
-      /* setTimeout(async () => {
-        await handleEndThisVar("Desserts");
-      }, 3000); */
     }
 
     handleEndThisVar({ mealCategory });
 
-    // dispatch(dailyActions.handleEndThisVar({ mealCategory }));
-
-    console.log("meal meal cate", mealCategory);
+    // console.log("meal meal cate", mealCategory);
 
     const myChoiceRender = suitRenderMeals(mealCategory);
     setChoosingMeals(myChoiceRender);
@@ -86,7 +70,7 @@ function FoodsDay() {
   const removeLoading = (timer) => {
     if (loading) {
       setTimeout(async () => {
-        console.log("Loading ...");
+        // console.log("Loading ...");
 
         await setLoading(false);
       }, timer);
@@ -94,9 +78,6 @@ function FoodsDay() {
   };
 
   const suitRenderMeals = (mealCategory) => {
-    console.log("mealCategory:", mealCategory);
-    console.log("selectSeafoods:", selectSeafoods);
-
     if (mealCategory === "Meats") {
       return selectMeats;
     } else if (mealCategory === "Seafoods") {
@@ -109,7 +90,7 @@ function FoodsDay() {
   };
 
   const focusMeal = (e) => {
-    console.log("on focus e.target :", e.target.closest(".min_showcase"));
+    /*  console.log("on focus e.target :", e.target.closest(".min_showcase")); */
 
     const mealIndex = e.target
       .closest(".min_showcase")
@@ -145,9 +126,6 @@ function FoodsDay() {
         item.classList.remove("speed_focus");
       }
     });
-
-    console.log("mobMealRef", mobMealRef);
-    console.log("desMealRef", desMealRef);
   };
 
   const removeFocusMeal = (e) => {
@@ -169,14 +147,14 @@ function FoodsDay() {
     if (!e.target.classList.contains("each_day_dish")) {
       arrMob.map((item, i) => {
         if (item.classList.contains("speed_focus")) {
-          console.log("item,:", item);
+          // console.log("item,:", item);
           item.classList.remove("speed_focus");
         }
       });
 
       arrDes.map((item, i) => {
         if (item.classList.contains("speed_focus")) {
-          console.log("item,:", item);
+          // console.log("item,:", item);
           item.classList.remove("speed_focus");
         }
       });
@@ -193,12 +171,8 @@ function FoodsDay() {
   }, []);
 
   useEffect(() => {
-    console.log(`choose to see new Meals`);
+    // console.log(`choose to see new Meals`);
   }, [choosingMeals]);
-
-  /* useEffect(() => {
-    console.log("1--2--3 update under e.target square");
-  }, [endThisVar]); */
 
   return (
     <main className="welcome_day">

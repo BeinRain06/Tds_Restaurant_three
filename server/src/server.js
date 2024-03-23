@@ -37,6 +37,8 @@ app.use(
       "http://localhost:5000",
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
     ],
     credentials: true,
   })

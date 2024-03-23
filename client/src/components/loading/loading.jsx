@@ -23,7 +23,7 @@ function Loading() {
     const result = await getMeals();
 
     setTimeout(() => {
-      console.log("fetching course");
+      // console.log("fetching course");
     }, 2500);
 
     const meals = result;
@@ -52,13 +52,6 @@ function Loading() {
     handleDesserts(desData);
     handleMeats(meatsData);
     handleVegetarians(vegData);
-
-    /*  dispatch(mealActions.handleSeaFoods(seaData));
-    dispatch(mealActions.handleDesserts(desData));
-    dispatch(mealActions.handleMeats(meatsData));
-    dispatch(mealActions.handleVegetarians(vegData)); */
-
-    console.log("result:", result);
   };
 
   useEffect(() => {
@@ -66,12 +59,11 @@ function Loading() {
       const insureFetchData = async () => {
         await fetchData();
         await handleWelcome(false);
-        /*  dispatch(mealActions.handleWelcome(false)); */
       };
 
       insureFetchData();
 
-      console.log("Fetching data ...");
+      // console.log("Fetching data ...");
     } catch (err) {
       console.log(err);
       if (err) setHasError(err.message);

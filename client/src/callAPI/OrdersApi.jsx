@@ -10,7 +10,7 @@ export async function initiateOrder(userEmail, orderSpecsCurrent) {
     console.log("API-orderSpecsCurrent :", orderSpecsCurrent);
     const ordersSpecs = orderSpecsCurrent;
 
-    console.log("orders - API -userEmail :", userEmail);
+    // console.log("orders - API -userEmail :", userEmail);
 
     const params = {
       ordersSpecs: orderSpecsCurrent,
@@ -58,7 +58,7 @@ export async function fetchOrdersWeek(userId) {
 
     const orderListWeek = res.data.data;
 
-    console.log("ordered:", orderListWeek);
+    // console.log("ordered:", orderListWeek);
 
     return orderListWeek;
   } catch (err) {
@@ -89,7 +89,7 @@ export async function updateThisLocationOrder(userId, newLoc, orderId) {
 
     const order = res.data.data;
 
-    console.log("ordered:", order);
+    // console.log("ordered:", order);
 
     return order;
   } catch (err) {
@@ -101,8 +101,8 @@ export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
   try {
     let api_url = "http://localhost:5000/api/delivery/orders/order/updateprice";
 
-    console.log("orderId -API-PUT METHOD:", orderId);
-    console.log("orderSpecsCurrent -API-PUT METHOD:", orderSpecsCurrent);
+    /* console.log("orderId -API-PUT METHOD:", orderId);
+    console.log("orderSpecsCurrent -API-PUT METHOD:", orderSpecsCurrent); */
 
     const res = await axios.put(
       `${api_url}/${orderId}`,
@@ -120,7 +120,7 @@ export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
 
     const order = res.data.data;
 
-    console.log("order when updated:", order);
+    // console.log("order when updated:", order);
 
     return order;
 
@@ -154,8 +154,6 @@ export async function checkTotalPriceOrder(orderSpecsCurrent) {
   try {
     let api_url = "http://localhost:5000/api/delivery/orders/order/checkprice";
 
-    console.log("orderSpecsCurrent -API-Post METHOD:", orderSpecsCurrent);
-
     const res = await axios.post(
       api_url,
       {
@@ -172,7 +170,7 @@ export async function checkTotalPriceOrder(orderSpecsCurrent) {
 
     const totalPriceIn = res.data.data.toFixed(2);
 
-    console.log("new total price when updated:", totalPriceIn);
+    // console.log("new total price when updated:", totalPriceIn);
 
     return totalPriceIn;
 

@@ -52,7 +52,6 @@ const MiniCardWeekOrders = ({ meal }) => {
 
   const handleNewRatings = async (e) => {
     e.preventDefault();
-    console.log("e target New Ratings:", e.target);
 
     const mealId = mealRef.current.getAttribute("data-meals");
 
@@ -126,7 +125,7 @@ const MiniCardWeekOrders = ({ meal }) => {
         newFeedback
       );
 
-      console.log("udated Rated Meal:", weUpdatingRatedMeal);
+      // console.log("udated Rated Meal:", weUpdatingRatedMeal);
     } else {
       //postRated Meal
       const triggeredRatedMeal = await postRatedMeal(mealId, rating, feedback);
@@ -145,7 +144,7 @@ const MiniCardWeekOrders = ({ meal }) => {
   };
 
   useEffect(() => {
-    console.log("opening Ratings Form week day");
+    // console.log("opening Ratings Form week day");
   }, [isRatingOPen]);
 
   return (

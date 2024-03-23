@@ -6,13 +6,10 @@ import { AhmadIMG, SHAWNAN, MTN, ORANGE } from "../../assets/images";
 import "./Favourites.css";
 
 function Favourites() {
-  /* const dispatch = useDispatch(); */
   const { handleWelcome } = useContext(MealContext);
   useEffect(() => {
-    console.log("present navbar");
     setTimeout(() => {
       handleWelcome(false);
-      /*  dispatch(mealActions.handleWelcome(false)); */
     }, 3000);
   }, []);
   return (

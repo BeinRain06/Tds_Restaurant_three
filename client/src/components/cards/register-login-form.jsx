@@ -8,7 +8,6 @@ import moment from "moment";
 import "./register-login-form.css";
 
 function LogOrRegisterForm({ setShowTotalPrice }) {
-
   const {
     state: { user },
     handleUser,
@@ -106,8 +105,8 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
 
     updateUserandInitOrder(goToUser);
 
-    console.log("thisorder when registering  :", thisOrder);
-    console.log("user when registerings :", user);
+    /*  console.log("thisorder when registering  :", thisOrder);
+    console.log("user when registerings :", user); */
 
     updatefieldTemplate(firstStatus);
   };
@@ -120,9 +119,6 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
     phone,
     email,
   }) => {
-    console.log(
-      `that email: ${email}, that password:  ${password} , that street: ${street}, ...and so many else`
-    );
     const res = await userRegistering({
       password,
       city,
@@ -137,7 +133,7 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
 
   const catchTotalPrice = (myOrder) => {
     let total = myOrder;
-    console.log("thisorder here :", total);
+    // console.log("thisorder here :", total);
     let totalArr = Array.from(total);
     let output = "";
     totalArr.map((elt) => {
@@ -146,14 +142,6 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
     console.log(output);
     return output;
   };
-
-  /*  const updateLogSession = async ({ email, password }) => {
-    const goToUser = await sendLoggingData({ email, password });
-
-    const myOrder = await updateUserandInitOrder(goToUser, email);
-
-    return myOrder;
-  }; */
 
   const updateUserandInitOrder = async (goToUser, email) => {
     await handleUser(goToUser);
@@ -167,7 +155,7 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
         ? { user: user.id, type: "id" }
         : { user: email, type: "email" };
 
-    console.log("user data", userData);
+    // console.log("user data", userData);
 
     const initThatOrder = async () => {
       return await new Promise((resolve) => {
@@ -182,11 +170,8 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
 
     await handleThisOrder(myOrderIn);
 
-    console.log("that result here:", myOrderIn);
-
     setTimeout(() => {
-      console.log("update thisOrder data");
-      /* setIsUpdate(true) */
+      // console.log("update thisOrder data");
     }, 3000);
 
     return myOrderIn;
@@ -194,20 +179,15 @@ function LogOrRegisterForm({ setShowTotalPrice }) {
 
   const updatefieldTemplate = (myOrder) => {
     setTimeout(() => {
-      console.log("this order in appState:", thisOrder);
-
       let totalPriceIn = catchTotalPrice(myOrder);
 
       handleTotalPrice(totalPriceIn);
     }, 3000);
 
-    console.log("total price in login:", totalPrice);
-
     let currentTime = moment().format("hh:mm a");
 
     setTimeout(() => {
-      console.log("updation ended");
-      /*  setIsUpdate(false); */
+      // console.log("updation ended");
     }, 3000);
   };
 

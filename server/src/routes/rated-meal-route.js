@@ -18,6 +18,8 @@ router.use(
       "http://localhost:5000",
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
     ],
     credentials: true,
   })
@@ -42,7 +44,7 @@ router.post("/", async (req, res) => {
     });
 
     newRatedMeal = await newRatedMeal.save(); //mongoDB save
-    console.log("newRatedMeal :", newRatedMeal);
+    /* console.log("newRatedMeal :", newRatedMeal); */
 
     res.json({ success: true, data: newRatedMeal });
   } catch (err) {
@@ -75,8 +77,6 @@ router.get("/", async (req, res) => {
 //UPDATE(PUT) - Rated MEAL EXISTING
 router.put("/ratedmeal:ratedId", async (req, res) => {
   try {
-    console.log("rating on updation process");
-
     const ratedId = req.params.ratedId;
 
     const updateInstance = await RatedMeal.findByIdAndUpdate(

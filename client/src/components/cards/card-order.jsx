@@ -13,15 +13,7 @@ function CardOrder({ ...props }) {
     handleNewLocation,
   } = useContext(TemplateContext);
 
-  /*  const dispatch = useDispatch();
-  const orderSpecsCurrentFromTemplateSlice = useSelector(
-    orderSpecsCurrent_section
-  ); */
   const [newQty, setNewQty] = useState(1);
-
-  // branching your data to Local Storage
-  /* const appState = JSON.parse(localStorage.getItem("appState"));
-  const orderSpecsCurrent = appState.orderPrime.orderSpecsCurrent; */
 
   const mealId = props.id;
 

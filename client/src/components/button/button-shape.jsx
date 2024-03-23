@@ -89,7 +89,6 @@ export const Confirm = ({
     const mealPrice = mealprice;
     const mealImg = mealimg;
     const originMeal = originmeal;
-    console.log("originMeal: ", originMeal);
 
     let orderItems = [];
     let indexItem = null;
@@ -143,7 +142,7 @@ export const Confirm = ({
       }
     }
 
-    console.log("orderItems:", orderItems);
+    // console.log("orderItems:", orderItems);
 
     setTimeout(() => {
       handleOrderSpecs(orderItems);
@@ -153,15 +152,15 @@ export const Confirm = ({
 
   const confirmOrder = () => {
     setTimeout(() => {
-      console.log("updating...");
+      // console.log("updating...");
       buildOrderItem();
     }, 3000);
 
     setTimeout(() => {
       setIsCliked(false);
       handleNewLocation(false);
-      console.log("order Confirmed!");
-      console.log("orderSpecsCurrent catch :", orderSpecsCurrent);
+      // console.log("order Confirmed!");
+      // console.log("orderSpecsCurrent catch :", orderSpecsCurrent);
     }, 3200);
   };
 

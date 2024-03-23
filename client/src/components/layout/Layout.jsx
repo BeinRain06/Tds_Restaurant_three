@@ -30,7 +30,7 @@ export const SquareItems = () => {
   };
 
   useEffect(() => {
-    console.log("Layout Count items!");
+    // console.log("Layout Count items!");
   }, [orderSpecsCurrent]);
 
   return (

@@ -58,7 +58,6 @@ export const CardDayOrder = ({ id, meal }) => {
 
   const handleNewRatings = async (e) => {
     e.preventDefault();
-    console.log("e target New Ratings:", e.target);
 
     const mealId = mealRef.current.getAttribute("data-meals");
 
@@ -78,11 +77,9 @@ export const CardDayOrder = ({ id, meal }) => {
       // POST in Rating collection
       const newRatedMeal = await postRatedMeal(mealId, rating, feedback);
 
-      console.log("newRatedMeal:", newRatedMeal);
+      // console.log("newRatedMeal:", newRatedMeal);
 
       const ratingTakePlace = await ratingIdentity(userId, newRatedMeal.id);
-
-      console.log("ratings take place:", ratingTakePlace);
 
       handleRatings(ratingTakePlace);
     } else {
@@ -93,7 +90,7 @@ export const CardDayOrder = ({ id, meal }) => {
         entireRatedMeals
       );
 
-      console.log("submit update:", submitUpdate);
+      // console.log("submit update:", submitUpdate);
     }
 
     return mealId;
@@ -139,7 +136,7 @@ export const CardDayOrder = ({ id, meal }) => {
         newFeedback
       );
 
-      console.log("udated Rated Meal:", weUpdatingRatedMeal);
+      // console.log("udated Rated Meal:", weUpdatingRatedMeal);
     } else {
       //postRated Meal
       const triggeredRatedMeal = await postRatedMeal(mealId, rating, feedback);
@@ -158,7 +155,7 @@ export const CardDayOrder = ({ id, meal }) => {
   };
 
   useEffect(() => {
-    console.log("opening Ratings Form in day");
+    // console.log("opening Ratings Form in day");
   }, [isRatingOPen]);
 
   return (

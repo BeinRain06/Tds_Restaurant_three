@@ -15,6 +15,8 @@ router.use(
       "http://localhost:5000",
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
     ],
     credentials: true,
   })
@@ -59,8 +61,6 @@ router.post("/payment", async (req, res) => {
 
     payment = await payment.save();
 
-    console.log("POST PAYMENT:", payment);
-
     res.json({ success: true, data: payment });
   } catch (err) {
     res.status(500).json({
@@ -86,7 +86,6 @@ router.put("/payment/:paymentId", async (req, res) => {
       },
       { new: true }
     );
-    console.log("update payment , end payment", payment);
 
     res.json({ success: true, data: payment });
   } catch (err) {

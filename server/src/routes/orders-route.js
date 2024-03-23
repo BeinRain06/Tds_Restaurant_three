@@ -19,6 +19,8 @@ router.use(
       "http://localhost:5000",
       "http://localhost:3000",
       "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
     ],
     credentials: true,
   })
@@ -26,7 +28,6 @@ router.use(
 
 //Fetching Order Week
 router.get("/orderWeek", async (req, res) => {
-  console.log("order on the week");
   try {
     const ordersList = await Order.find({ user: req.body.user })
       .populate("ordersSpecs", "quantity")
@@ -64,7 +65,6 @@ router.get("/orderWeek", async (req, res) => {
 
 //Emit Order
 router.post("/order", async (req, res) => {
-  console.log("orders-routes orderSpecsCurrent :", req.body);
   try {
     const orderSpecIds = Promise.all(
       req.body.ordersSpecs.map(async (orderSpec) => {
@@ -114,12 +114,6 @@ router.post("/order", async (req, res) => {
       let city, street, userId;
 
       if (req.body.city === "home" || req.body.street === "home") {
-        /*  if (userData.type === "id") {
-          currentUser = await User.findById(userData.user);
-        } else {
-          currentUser = await User.findOne({ email: userData.user });
-        } */
-
         if (req.cookies.userId !== undefined) {
           console.log("userId: ", req.cookies.userId);
           currentUser = await User.findById(req.cookies.userId);
@@ -161,8 +155,6 @@ router.post("/order", async (req, res) => {
     });
 
     order = await order.save();
-
-    console.log("new Order successfully posted", order);
 
     res.json({ success: true, data: order });
     // ...be continued, add user in order and phone user in order but first finish categories-routes code implementation
@@ -223,9 +215,6 @@ router.post("/order/checkprice", async (req, res) => {
 
 // UPDATING NEW LOCATION
 router.put("/order/newlocation/:orderId", async (req, res) => {
-  console.log("body phone:", req.body.phone);
-  console.log("body user:", req.body.user);
-
   let city = req.body.city;
   let street = req.body.street;
 
@@ -247,7 +236,6 @@ router.put("/order/newlocation/:orderId", async (req, res) => {
       },
       { new: true }
     );
-    console.log(" Order successfully updated", updateOrder);
 
     res.json({ success: true, data: updateOrder });
   } catch (err) {
@@ -298,8 +286,6 @@ router.put("/order/updateprice/:orderId", async (req, res) => {
 
     const totalPrice = totalPrices.reduce((acc, elt) => acc + elt, 0);
 
-    console.log("params orderId:", req.params.orderId);
-
     const updateOrder = await Order.findByIdAndUpdate(
       req.params.orderId,
       {
@@ -309,7 +295,6 @@ router.put("/order/updateprice/:orderId", async (req, res) => {
       },
       { new: true }
     );
-    console.log(" Order successfully updated", updateOrder);
 
     res.json({ success: true, data: updateOrder });
   } catch (err) {

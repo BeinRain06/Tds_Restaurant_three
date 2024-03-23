@@ -107,8 +107,6 @@ export const TemplateDayFlying = ({
 
   const interval = useRef(null);
 
-  /* li, handleMoveToValidation  */
-
   const firstStepPayment = async () => {
     return await new Promise(async (resolve) => {
       console.log("inside this order:", thisOrder);
@@ -125,7 +123,6 @@ export const TemplateDayFlying = ({
     });
   };
 
-  // HERE ===>  NEXT FUNCTION TO IMPLEMENT ACTION   <=== HERE
   const validateThisOrder = () => {
     //Pre-Actions
     validateRef.current.classList.remove("impact_more_step");
@@ -136,8 +133,6 @@ export const TemplateDayFlying = ({
     setTimeout(async () => {
       await updateDataTemplate();
     }, 4000);
-
-    /* handleOrdersWeek(orderSpecsCurrent); */
 
     callTimer(70); // time set in s  <--- // change to "7200" --> (for 2 hours) --->;
 
@@ -173,7 +168,7 @@ export const TemplateDayFlying = ({
     let newDataTemplateOrdersDay;
     initPayment = await firstStepPayment();
 
-    console.log("initPayment:", initPayment);
+    // console.log("initPayment:", initPayment);
     setMyPaymentInit(initPayment);
 
     const indexPayment = countClickValidate + 1;
@@ -219,8 +214,6 @@ export const TemplateDayFlying = ({
 
   const handleMoveToValidation = () => {
     handleIsOneMoreStep(false);
-    /*  handleOpenFinalValidation(true); */
-    /* handleApplyText("Minimize"); */
     setApplyColor("gray");
     handleTicketNumber((totalPrice - 3).toString(16));
     handleHoursPrint(moment().format("hh:mm a"));
@@ -234,7 +227,7 @@ export const TemplateDayFlying = ({
     if (e.target.id === "reg_price_2") {
       const cookies = getCookies();
       const userId = cookies.userId;
-      console.log("cookies userId:", userId);
+      // console.log("cookies userId:", userId);
 
       if (userId === undefined) {
         setTimeout(() => {
@@ -251,11 +244,6 @@ export const TemplateDayFlying = ({
         /* const fetchingWeek = await fetchOrdersWeek(userId); */
 
         if (thisOrder._id !== undefined) {
-          console.log(
-            "saved and updated my order errLoc(thisOrder):",
-            thisOrder
-          );
-
           const newChange = await updateThisTotalPriceOrder(
             thisOrder._id,
             orderSpecsCurrent
@@ -264,13 +252,13 @@ export const TemplateDayFlying = ({
           handleThisOrder(newChange);
 
           setTimeout(() => {
-            console.log("new this order send back:", newChange);
+            // console.log("new this order send back:", newChange);
           }, 1000);
 
           setShowTotalPrice(newChange.totalPrice);
           handleTotalPrice(newChange.totalPrice);
         } else if (thisOrder._id === undefined) {
-          console.log("user data saved:", user);
+          // console.log("user data saved:", user);
           const newTakenOrder = await initiateOrder(
             user.userEmail,
             orderSpecsCurrent
@@ -281,7 +269,7 @@ export const TemplateDayFlying = ({
           setShowTotalPrice(newTakenOrder.totalPrice);
 
           setTimeout(() => {
-            console.log("new taken order command:", newTakenOrder);
+            // console.log("new taken order command:", newTakenOrder);
           }, 1000);
           handleTotalPrice(newTakenOrder.totalPrice);
         }
@@ -346,14 +334,6 @@ export const TemplateDayFlying = ({
       };
 
       handleTimerIn(newSendTimer);
-
-      /*  setOurTimer(
-          (hrs > 9 ? hrs : "0" + hrs) +
-            ": " +
-            (min > 9 ? min : "0" + min) +
-            ":" +
-            (sec > 9 ? sec : "0" + sec)
-        ); */
     }
   };
 
@@ -397,26 +377,22 @@ export const TemplateDayFlying = ({
   };
 
   useEffect(() => {
-    console.log("TemplateDayFlying:", dataTemplatesOrdersDay);
+    // console.log("TemplateDayFlying:", dataTemplatesOrdersDay);
   }, []);
 
   useEffect(() => {
-    console.log("this place redirect to login or register form!");
+    // console.log("this place redirect to login or register form!");
   }, [firstTimeOrder]);
 
   useEffect(() => {
-    console.log(
+    /* console.log(
       "This have to Update The quantity and mini Total Price Template Ticket!"
-    );
+    ); */
   }, [orderSpecsCurrent, dataTemplatesOrdersDay, applyText]);
 
-  /*  <div key={id} className="template_slider_boundary">
-     
-    </div> */
-
   useEffect(() => {
-    console.log("Grab OrderSpecCurrent useEff:", orderSpecsCurrent);
-    console.log("Grab dataTemplatesOrdersDay useEff:", dataTemplatesOrdersDay);
+    /*  console.log("Grab OrderSpecCurrent useEff:", orderSpecsCurrent);
+    console.log("Grab dataTemplatesOrdersDay useEff:", dataTemplatesOrdersDay); */
   }, []);
 
   return (
@@ -635,8 +611,6 @@ export const TemplateDaySent = ({ id }) => {
     state: { dataTemplatesOrdersDay },
   } = useContext(TemplateContext);
 
-  /* const [isEndWatchingTimer, handleIsEndWatchingTimer] = useState(false); */
-
   const [isPayment, setIsPayment] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
 
@@ -669,8 +643,6 @@ export const TemplateDaySent = ({ id }) => {
 
       breakEndRef?.current.classList.remove("expand_book");
     }
-
-    console.log("ticketManualRef:", ticketManualRef);
   };
 
   const delayPayment = () => {
@@ -686,15 +658,11 @@ export const TemplateDaySent = ({ id }) => {
   };
 
   useEffect(() => {
-    console.log("isPaid : ==", isPaid);
-    console.log("dataTemplatesOrdersDay[+id]:", dataTemplatesOrdersDay[+id]);
-    console.log("timerIn[id] --3:", timerIn);
+    /* console.log("isPaid : ==", isPaid);
+    console.log("dataTemplatesOrdersDay[+id]:", dataTemplatesOrdersDay[+id]); */
   }, []);
 
   useEffect(() => {
-    console.log("timerIn -- 2:", timerIn);
-    console.log("timerIn[id] -- 2:", timerIn[id]);
-
     const countingTimer = () => {
       const tmpArr = timerIn[id].value.split(":");
 
@@ -959,7 +927,6 @@ export const TemplateDaySent = ({ id }) => {
 };
 
 function TemplateOrder({ id, countClick, lookingForGameOrValidation }) {
-  /*  const [isEnd, setIsEnd] = useState(getStatusEnd(id, countClickValidate)); */
   const {
     state: { countClickValidate },
   } = useContext(ValidationContext);
@@ -972,41 +939,11 @@ function TemplateOrder({ id, countClick, lookingForGameOrValidation }) {
   });
 
   useEffect(() => {
-    console.log("count click validate useEff:", countClickValidate);
+    // console.log("count click validate useEff:", countClickValidate);
   }, []);
 
-  /* useEffect(() => {
-    if (countClickValidate >= 1) {
-      setIdToTake(countClickValidate.toString());
-      setTimeout(() => {
-        setIsEnd(true);
-      }, 3000);
-    }
-  }, [countClickValidate]); */
-
-  /* 
-  {
-    isEnd ? (
-      <TemplateDaySent
-        id={id}
-        dataTemplate={dataTemplate}
-        countClickValidate={countClickValidate}
-      />
-    ) : (
-      <TemplateDayFlying
-        id={id}
-        lookingForGameOrValidation={lookingForGameOrValidation}
-      />
-    );
-  } */
-
   if (isEnd) {
-    return (
-      <TemplateDaySent
-        id={idToTake}
-        /* countClickValidate={countClickValidate} */
-      />
-    );
+    return <TemplateDaySent id={idToTake} />;
   } else {
     return (
       <TemplateDayFlying
