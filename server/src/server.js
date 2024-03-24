@@ -31,6 +31,7 @@ var cors = require("cors");
 
 require("dotenv").config();
 
+// domains api allowed
 app.use(
   cors({
     origin: [
