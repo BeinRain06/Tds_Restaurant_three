@@ -7,7 +7,7 @@ export async function initiateOrder(userEmail, orderSpecsCurrent) {
   try {
     let api_url = "http://localhost:5000/api/delivery/orders/order";
 
-    console.log("API-orderSpecsCurrent :", orderSpecsCurrent);
+    // console.log("API-orderSpecsCurrent :", orderSpecsCurrent);
     const ordersSpecs = orderSpecsCurrent;
 
     // console.log("orders - API -userEmail :", userEmail);

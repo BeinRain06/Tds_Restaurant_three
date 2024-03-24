@@ -31,10 +31,13 @@ function requireAuthJwt() {
         url: /\/api\/delivery\/users\/register(.*)/,
         methods: ["POST", "PUT"],
       },
+      {
+        url: /\/api\/delivery\/ratings(.*)/,
+        methods: ["GET", "OPTIONS", "POST", "PUT"],
+      },
       `${api}/users/login`,
 
       `${api}/ratedmeals`,
-      `${api}/ratings`,
 
       `${api}/orders/order`,
     ],

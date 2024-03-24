@@ -266,7 +266,8 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
     // new logic
     const dayMeals = dataTemplatesOrdersDay[id].orderSpecsCurrent;
 
-    console.log("dayMeals:", dayMeals);
+    // console.log("dayMeals:", dayMeals);
+
     const dayMealsObj = { ...ordersDay, ...dayMeals };
     const indexDay = moment().format("d");
     const weekMealsObj = {
@@ -274,8 +275,8 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
       [indexDay]: { ...ordersWeek[indexDay], ...dayMeals },
     };
 
-    console.log("dayMealsObj:", dayMealsObj);
-    console.log("weakMealsObj:", weekMealsObj);
+    /* console.log("dayMealsObj:", dayMealsObj);
+    console.log("weekMealsObj:", weekMealsObj); */
 
     handleOrdersDay(dayMealsObj);
     handleOrdersWeek(weekMealsObj);
@@ -285,22 +286,20 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
     return await new Promise(async (resolve) => {
       let { paymentId, account, amountBill } = dataPayment;
 
-      console.log("idTmp : ==> : ", idTmp);
+      // console.log("idTmp : ==> : ", idTmp);
 
       const paymentOnTheEnd = async () => {
         const newSend = await endPayment(paymentId, account, amountBill);
         return newSend;
       };
 
-      const toSend = await paymentOnTheEnd(); // wasn't properly resolved ==> test once again
-
-      console.log("payments:", payments);
+      const toSend = await paymentOnTheEnd();
 
       const indexPay = idTmp;
 
       let newUpdatedPayment = { ...payments, [indexPay]: toSend };
 
-      console.log("new update payment:", newUpdatedPayment); // something fishy here affecting dataTemplatesOrdersDay
+      // console.log("new update payment:", newUpdatedPayment);
 
       handlePayment(newUpdatedPayment);
 
@@ -314,7 +313,7 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
         },
       };
 
-      console.log("new dataTemplatesOrdersDay:", newData);
+      // console.log("new dataTemplatesOrdersDay:", newData);
 
       handleTemplateOrdersDay(newData);
 
@@ -326,8 +325,8 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
 
   const endingStepPayment = (e, id) => {
     e.preventDefault();
-    console.log(e.target);
-    console.log("willing to end the payment");
+    /*  console.log(e.target);
+    console.log("willing to end the payment"); */
 
     const inputCode = e.target.elements.code;
     const selectCompany = e.target.elements.company;
@@ -377,15 +376,13 @@ function PaymentSubmit({ id, delayPayment, setIsPayment, setIsPaid }) {
     proccessingPayment(id, newHoldingPaymentData);
     updateOrdersWeekAndDay();
 
-    console.log("timerIn ==> Payment Submit:", timerIn);
-
     setIsPaid(true);
 
     setIsPayment(false);
   };
 
   useEffect(() => {
-    console.log("seems to be having an error...");
+    // console.log("seems to be having an error...");
   }, [isError]);
 
   return (

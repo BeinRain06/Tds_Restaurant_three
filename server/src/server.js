@@ -91,9 +91,19 @@ app.post("/api/delivery/picture", upload.single("meat"), function (req, res) {
 
 //BASE_URL to print image in browse
 
-app.use("/api/delivery/images", express.static("public/images/meats"));
+/* app.use("/api/delivery/images", express.static("public/images/meats"));
 
-app.use("/api/delivery/images", express.static("public/images/vegetarians"));
+app.use("/api/delivery/images", express.static("public/images/vegetarians")); */
+
+app.use(
+  "/api/delivery/images",
+  express.static(__dirname + "/public/images/meats")
+);
+
+app.use(
+  "/api/delivery/images",
+  express.static(__dirname + "/public/images/vegetarians")
+);
 
 app.use(
   "/api/delivery/images",

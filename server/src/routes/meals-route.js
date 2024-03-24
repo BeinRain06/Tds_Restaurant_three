@@ -18,10 +18,24 @@ router.use(
       "https://tds-restaurant-three-ui.vercel.app",
       "https://tds-restaurant-three.vercel.app/",
     ],
-    preflightContinue: false,
     credentials: true,
   })
 );
+
+/* router.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app/",
+    ],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    credentials: true,
+  })
+); */
 
 // FOR POST
 router.post(

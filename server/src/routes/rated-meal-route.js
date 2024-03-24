@@ -21,7 +21,6 @@ router.use(
       "https://tds-restaurant-three-ui.vercel.app",
       "https://tds-restaurant-three.vercel.app/",
     ],
-    preflightContinue: false,
     credentials: true,
   })
 );

@@ -8,7 +8,7 @@ import Loading from "../loading/loading.jsx";
 
 import "./Home.css";
 
-function Home() {
+export const Home = () => {
   const {
     state: { meals, meats, seaFoods, desserts, vegetarians, welcome },
   } = useContext(MealContext);
@@ -34,7 +34,7 @@ function Home() {
       if (meals.length === 0) {
         removeLoading(6000);
       } else {
-        removeLoading(2000);
+        removeLoading(4000);
       }
     } catch (err) {
       console.log(err);
@@ -145,6 +145,4 @@ function Home() {
       )}
     </>
   );
-}
-
-export default Home;
+};

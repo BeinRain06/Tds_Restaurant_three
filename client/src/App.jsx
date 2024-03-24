@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout.jsx";
-import Home from "./components/navbarLink/Home.jsx";
+import { Home } from "./components/navbarLink/Home.jsx";
 import FoodsDay from "./components/navbarLink/FoodsDay.jsx";
 import Favourites from "./components/navbarLink/Favourites.jsx";
 import Orders from "./components/navbarLink/Orders.jsx";

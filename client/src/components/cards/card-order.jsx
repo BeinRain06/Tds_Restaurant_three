@@ -47,7 +47,7 @@ function CardOrder({ ...props }) {
   }, [orderSpecsCurrent]);
 
   return (
-    <li id={props.id} className="keeping_table">
+    <li key={props.id} id={props.id} className="keeping_table">
       <div className="dish_table">
         <div className="dish_topic">
           <p className="dish_current_name">{props.name}</p>

@@ -27,6 +27,7 @@ function Loading() {
     }, 2500);
 
     const meals = result;
+
     let desData = [];
     let vegData = [];
     let seaData = [];
@@ -62,6 +63,8 @@ function Loading() {
       };
 
       insureFetchData();
+
+      // setTimeout(() => {}, 4000);
 
       // console.log("Fetching data ...");
     } catch (err) {

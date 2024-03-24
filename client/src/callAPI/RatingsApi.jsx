@@ -20,7 +20,7 @@ export async function getAllRatings() {
 
 // called when the app launch (Welcome.jsx)
 export async function getThisUserRatings(userId) {
-  let api_url = "http://localhost:5000/api/delivery/ratings/rating";
+  let api_url = "http://localhost:5000/api/delivery/ratings";
 
   try {
     const res = await axios.get(`${api_url}/${userId}`);

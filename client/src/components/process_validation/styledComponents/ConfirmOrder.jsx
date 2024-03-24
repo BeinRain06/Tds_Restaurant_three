@@ -63,25 +63,6 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-/* function ValidateOrder() {
-  
-  return (
-    <div className="wrap_validate_msg">
-      <div className="validate_msg_content">
-        <p className="msg_validation">Do You Confirm The Order</p>
-        <div className="space_btn_validation">
-          <button type="button" className="accept_validation">
-            YES
-          </button>
-          <button type="button" className="close_validation">
-            NO
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-} */
-
 function ConfirmOrder({ handleStepBackLoc, validateThisOrder }) {
   return (
     <ValidateMsg>

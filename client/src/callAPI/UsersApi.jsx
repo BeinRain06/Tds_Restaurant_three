@@ -48,7 +48,7 @@ export async function userLogging({ email, password }) {
 
     let api_url = "http://localhost:5000/api/delivery/users/login";
 
-    console.log(`API-- this email: ${email}, this password:${password}`);
+    // console.log(`API-- this email: ${email}, this password:${password}`);
 
     const res = await axios.post(
       api_url,

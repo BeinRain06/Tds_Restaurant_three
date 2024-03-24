@@ -19,7 +19,7 @@ import {
 import getCookies from "../cookies/GetCookies";
 
 import ConfirmOrder from "../process_validation/styledComponents/ConfirmOrder";
-import NewLocationOrder from "../process_validation/styledComponents/NewLocationOrder";
+import { NewLocationOrder } from "../process_validation/styledComponents/NewLocationOrder";
 import OneMoreStep from "../process_validation/styledComponents/OneMoreStep";
 import ButtonApply from "../process_validation/styledComponents/ButtonApply";
 import { ButtonApplyTest } from "../process_validation/styledComponents/ButtonApply";

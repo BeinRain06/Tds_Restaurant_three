@@ -22,9 +22,9 @@ router.use(
       "http://localhost:3000",
       "http://localhost:5173",
       "https://tds-restaurant-three-ui.vercel.app",
-      "https://tds-restaurant-three.vercel.app/",
+      "https://tds-restaurant-three.vercel.app",
     ],
-    preflightContinue: false,
+    // preflightContinue: false,
     credentials: true,
   })
 );
@@ -50,7 +50,7 @@ router.get("/", async (req, res) => {
 });
 
 //FOR GETTING THIS USER ALL RATINGS
-router.get("/rating:userId", async (req, res) => {
+router.get("/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
 

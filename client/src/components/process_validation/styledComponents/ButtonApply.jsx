@@ -90,17 +90,4 @@ function ButtonApply({ id, onClick }) {
     return <ButtonB onClick={onClick}>minimize</ButtonB>;
 }
 
-/* function ButtonApply() {
-  return (
-    <button
-      type="button"
-      className="btn_apply_order"
-      onClick={openToNewLocation}
-      ref={minimizeOrApplyRef}
-    >
-      Apply
-    </button>
-  );
-} */
-
 export default ButtonApply;

@@ -26,7 +26,7 @@ import TemplateOrder from "../templateTicket/TemplateOrder.jsx";
 import LogOrRegisterForm from "../cards/register-login-form.jsx";
 import CardDayOrders from "../cards/card-day-orders.jsx";
 import ConfirmOrder from "../process_validation/styledComponents/ConfirmOrder";
-import NewLocationOrder from "../process_validation/styledComponents/NewLocationOrder";
+import { NewLocationOrder } from "../process_validation/styledComponents/NewLocationOrder";
 import OneMoreStep from "../process_validation/styledComponents/OneMoreStep";
 import { ButtonApplyTest } from "../process_validation/styledComponents/ButtonApply";
 import ErrorWarning from "../process_validation/styledComponents/MsgError";
@@ -241,7 +241,7 @@ function Orders() {
   };
 
   const handleControlRadio = async (e) => {
-    console.log(e.target);
+    // console.log(e.target);
 
     if (e.target.id === "reg_price_2") {
       const cookies = getCookies();
@@ -422,7 +422,6 @@ function Orders() {
 
   const handleSubmitOrder = (e) => {
     e.preventDefault();
-    console.log(e.target);
     openToNewLocation();
   };
 
@@ -481,7 +480,7 @@ function Orders() {
   }, [ordersDay, ordersWeek]);
 
   return (
-    <main className="welcome_orders" onClick={(e) => console.log(e.target)}>
+    <main className="welcome_orders">
       <div className="gen_orders">
         <h4 className="title_order">Orders</h4>
         <button type="button" onClick={startTestTimer}>
@@ -521,15 +520,6 @@ function Orders() {
       </div>
       {Object.keys(dataTemplatesOrdersDay).length === 1 && (
         <div className="template_slider_wrapper">
-          {/*  <TemplateDaySent
-            key="0"
-            id="0"
-            dataTemplate={dataTemplatesOrdersDay[0]}
-            countClickValidate={countClickValidate}
-            lookingForGameOrValidation={lookingForGameOrValidation}
-            callTimer={callTimer}
-          /> */}
-
           <TemplateOrder
             key="0"
             id="0"
@@ -563,9 +553,6 @@ function Orders() {
         Object.keys(dataTemplatesOrdersDay).length === 0 && (
           <div className="available_ticket">
             <div className="available_ticket_content" ref={ticketTempRef}>
-              {/* <button className="minimize_template" onclick={openToNewLocation}>
-                minimize
-              </button> */}
               <h4 className="title_order">Sample</h4>
               <hr className="breakpoint_ticket"></hr>
               <div className="sample_ticket">

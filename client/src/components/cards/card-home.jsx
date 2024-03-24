@@ -4,8 +4,9 @@ import Button from "../button/button-shape";
 /* import "./card-home.css"; */
 
 function CardHome({ ...props }) {
+  // console.log("props img:", props.image);
   return (
-    <li key={props.id} className="dish" onClick={(e) => console.log(e.target)}>
+    <li key={props.id} className="dish">
       <div className="dish_content flex-row">
         <img src={props.image} className="my_dish_img" alt="dish missing" />
 

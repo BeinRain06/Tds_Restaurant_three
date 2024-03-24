@@ -194,192 +194,7 @@ const Button = styled.button`
   }
 `;
 
-/* const ErrWarning = styled.p`
-  position: absolute;
-  top: 5.5rem;
-  width: 90%;
-  color: brown;
-  background-color: #e7e697;
-  padding: 0.25rem 1rem;
-  font-size: clamp(0.65rem, 0.75rem, 0.8rem);
-  border: 2px solid #fff;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  transition: all 1s ease-in-out;
-`;
-
-const MsgWarning = ({ message }) => {
-  return <ErrWarning>{message}</ErrWarning>;
-}; */
-
-/* function NewLocationOrder() {
-  const newLocationRef = useRef(null);
-  const newCityRef = useRef(null);
-  const newStreetRef = useRef(null);
-
-  const newRadioRefOne = useRef(null);
-  const newRadioRefTwo = useRef(null);
-
-  const closeFromNewLocation = () => {
-    handleNewLocation(false);
- 
-  };
-
-  const handleFirstStepLoc = (e) => {
-    e.preventDefault();
-    if (newRadioRefOne.current.checked) {
-      let phone = e.target.elements.newNum;
-      if (phone.value === "") {
-        alert("Please Enter a phone number");
-        handleNewLocation(false);
-       
-        return;
-      }
-
-      let city = "home";
-      let street = "home";
-
-      let newLocation = {
-        phone: phone.value,
-        city: city,
-        street: street,
-      };
-
-      setDataNewLocation(newLocation);
-
-      //close new location
-      handleNewLocation(false);
-     
-      phone.value = "";
-
-      //move to one more step
-      oneMoreStepRef.current.style.visibility = "visible";
-    } else if (newRadioRefTwo.current.checked) {
-      let phone = e.target.elements.newNum;
-      let city = e.target.elements.newCity;
-      let street = e.target.elements.newStreet;
-
-      if (phone.value === "" || city.value === "" || street.value === "") {
-        alert("Please Enter All the field");
-        handleNewLocation(false);
-        
-        return;
-      }
-      let newlocation = {
-        phone: phone.value,
-        city: city.value,
-        street: street.value,
-      };
-      setDataNewLocation(newlocation);
-
-      //close new location box
-      handleNewLocation(false);
-     
-
-      phone.value === "";
-      city.value === "";
-      street.value === "";
-
-      //move to one more step
-      oneMoreStepRef.current.style.visibility = "visible";
-    }
-  };
-
-  const handleNewRadioInput = (e) => {
-    if (e.target.id === "name_area_one") {
-      newLocationRef.current.style.visibility = "visible";
-      newCityRef.current.style.display = "none";
-      newStreetRef.current.style.display = "none";
-    } else if (e.target.id === "name_area_two") {
-      newLocationRef.current.style.visibility = "visible";
-      newCityRef.current.style.display = "block";
-      newStreetRef.current.style.display = "block";
-    }
-  };
-  return (
-    <div className="wrapping_new_location">
-      <span className="title_hold">Location</span>
-      <ul className="figure_area" onChange={handleNewRadioInput}>
-        <li>
-          <input
-            type="radio"
-            name="location"
-            id="name_area_one"
-            className="name_area area_expected_one"
-            ref={newRadioRefOne}
-          />
-          <label htmlFor="home">home</label>
-        </li>
-        <li>
-          <input
-            type="radio"
-            name="location"
-            id="name_area_two"
-            className="name_area area_expected_two"
-            ref={newRadioRefTwo}
-          />
-          <label htmlFor="home">new Location</label>
-        </li>
-      </ul>
-      <div className="add_more_info">
-        <form
-          className="control_in_new_direction"
-          onSubmit={handleFirstStepLoc}
-        >
-          <ul className="list_appearance" ref={newLocationRef}>
-            <li className="adding_phone">
-              <label htmlFor="phone"> add a number</label>
-              <input
-                type="number"
-                name="newNum"
-                id="number_add"
-                className="number_add"
-              />
-            </li>
-            <li className="adding_city" ref={newCityRef}>
-              <label htmlFor="city">city</label>
-              <input
-                type="text"
-                name="newCity"
-                id="city_add"
-                className="city_add"
-              />
-            </li>
-            <li className="adding_street" ref={newStreetRef}>
-              <label htmlFor="street">street</label>
-              <input
-                type="text"
-                name="newStreet"
-                id="street_add"
-                className="street_add"
-              />
-            </li>
-          </ul>
-
-          <ul className="spread_new_button">
-            <li id="spread_reject">
-              <button
-                type="button"
-                className="btn_on_new btn_loc_one"
-                onClick={closeFromNewLocation}
-              >
-                Reject
-              </button>
-            </li>
-            <li id="spread_ok">
-              <button type="submit" className="btn_on_new btn_loc_two">
-                OK
-              </button>
-            </li>
-          </ul>
-        </form>
-      </div>
-    </div>
-  );
-} */
-
-function NewLocationOrder() {
+export const NewLocationOrder = () => {
   const {
     state: { thisOrder, orderSpecsCurrent },
     handleNewLocation,
@@ -427,12 +242,11 @@ function NewLocationOrder() {
     const newTotalPrice = await checkingDataPrice();
 
     if (newTotalPrice === message) {
-      /*  setIsAnyPrevErr(true); */
       setTimeout(() => {
         setMsgErr(message);
       }, 2000);
       setTimeout(() => {
-        console.log("There is an previous Error somewhere in price...");
+        // console.log("There is an previous Error somewhere in price...");
         setMsgErr("");
       }, 7500);
     } else {
@@ -443,7 +257,6 @@ function NewLocationOrder() {
         return;
       } // expect data object - newLoc: {...}
 
-      console.log("new Location -ORDER-LOC-IN before UPDATE:", newLoc);
       const cookies = getCookies();
       const userId = cookies.userId;
 
@@ -454,15 +267,15 @@ function NewLocationOrder() {
       );
 
       handleThisOrder(updateLocationOrder);
-      console.log("Data in Submit Response:", updateLocationOrder);
+      // console.log("Data in Submit Response:", updateLocationOrder);
     }
   };
 
   const checkingDataPrice = useCallback(async () => {
     return await new Promise(async (resolve, reject) => {
       const dataNewTotalPrice = await checkTotalPriceOrder(orderSpecsCurrent);
-      console.log("this order total price:", thisOrder.totalPrice);
-      console.log("this data new total price:", dataNewTotalPrice);
+      // console.log("this order total price:", thisOrder.totalPrice);
+      // console.log("this data new total price:", dataNewTotalPrice);
 
       if (+dataNewTotalPrice !== thisOrder.totalPrice) {
         resolve(message);
@@ -625,6 +438,4 @@ function NewLocationOrder() {
       </MoreInformation>
     </NewLocation>
   );
-}
-
-export default NewLocationOrder;
+};

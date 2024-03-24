@@ -205,13 +205,13 @@ function CardDayOrders({ ordersSpecs }) {
   return (
     <>
       {Object.keys(ordersSpecs).map((key, i) => {
-        console.log("ordersSpecs :", ordersSpecs);
-        console.log("ordersSpecs Meal :", ordersSpecs[key]);
+        // console.log("ordersSpecs :", ordersSpecs);
+        // console.log("ordersSpecs Meal :", ordersSpecs[key]);
 
         const meal = ordersSpecs[key];
         const id = meal.id;
 
-        return <CardDayOrder id={id} meal={meal} />;
+        return <CardDayOrder key={id} id={id} meal={meal} />;
       })}
     </>
   );

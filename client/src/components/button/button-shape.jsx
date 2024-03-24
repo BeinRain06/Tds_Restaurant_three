@@ -216,13 +216,11 @@ function Button({ mealid, mealname, mealprice, mealimg, originmeal }) {
   const [isClicked, setIsCliked] = useState(false);
 
   const upstreamOrder = (e) => {
-    console.log(e.target);
-    /*  handleOpenFinalValidation(false); */
-    /* setIsCliked(true); */
+    /* console.log(e.target); */
 
     setTimeout(async () => {
       await setIsCliked(true);
-      console.log(" isClicked set true");
+      // console.log(" isClicked set true");
     }, 1000);
   };
 
