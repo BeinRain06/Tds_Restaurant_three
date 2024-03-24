@@ -55,11 +55,19 @@ router.get("/login", async (req, res) => {
     //jwt signing
     const token = createToken(user.id, user.isAdmin);
 
-    res.cookie(
+    /* res.cookie(
       "jwt",
       { token: token, user: user.id },
       { httpOnly: true, maxAge: maxAge }
-    );
+    ); */
+
+    console.log("token AC:", token);
+
+    const userId = user.id;
+
+    res.cookie("access_jwt_token", token, { httpOnly: true, maxAge: maxAge });
+
+    res.cookie("userId", userId, { httpOnly: true, maxAge: maxAge });
 
     res.json({ success: true, data: user });
   } catch (err) {
@@ -137,8 +145,10 @@ router.post("/login", async (req, res) => {
       //jwt signing
       const userId = user.id;
       const token = createToken(user.id, user.isAdmin);
-      res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge });
+      res.cookie("access_jwt_token", token, { httpOnly: true, maxAge: maxAge });
       res.cookie("userId", userId, { httpOnly: false, maxAge: maxAge });
+
+      console.log("token AC:", token);
 
       return res.status(200).json({
         success: true,

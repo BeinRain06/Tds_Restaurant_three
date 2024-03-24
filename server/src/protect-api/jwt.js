@@ -44,15 +44,30 @@ function requireAuthJwt() {
   });
 }
 
+//diffferents solution checking token
+/* var token =
+  req.cookies.access_token ||
+  req.body.access_token ||
+  req.query.access_token ||
+  req.headers["x-access-token"]; */
+
 // **expressJwt** offer a way to revoke one of the parameter passed in **jsonwebtoken**
 
 async function isRevokedCallback(req, payload, done) {
-  //is not Admin (role 1: customer)
-  if (!payload.isAdmin) {
+  //here our token in cookies is named "token"
+  var token =
+    req.cookies.access_jwt_token ||
+    req.body.access_jwt_token ||
+    req.query.access_jwt_token ||
+    req.headers["x-access-token"];
+
+  if (!payload.isAdmin || token === undefined) {
+    //is not Admin (role 1: customer) or token access not found
     done(null, true);
+  } else if (payload.isAdmin) {
+    // is Admin (role 2: Administrator)
+    done();
   }
-  // is Admin (role 2: Administrator)
-  done();
 }
 
 module.exports = requireAuthJwt;
