@@ -1,12 +1,11 @@
 import axios from "axios";
-
 axios.defaults.withCredentials = true;
 
 export async function getAllRatings() {
   let api_url = "http://localhost:5000/api/delivery/ratings";
 
   try {
-    const res = await axios.get(`${api_url}`);
+    const res = await axios.get(api_url);
 
     const allRatings = await res.data.data; //res.data(axios res) - .data (structured data response in backend)
 

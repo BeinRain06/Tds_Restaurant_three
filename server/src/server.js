@@ -131,7 +131,7 @@ app.use(`${api}/ratedmeals`, ratedMealRouter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 /* app.use(bodyParser.json()); */
-app.use(requireAuthJwt());
+/* app.use(requireAuthJwt()); */
 app.use(errorHandler);
 
 //middleware display index.html

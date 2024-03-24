@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 export async function getMeals() {
   const api_url = "http://localhost:5000/api/delivery/meals";

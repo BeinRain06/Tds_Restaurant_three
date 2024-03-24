@@ -6,12 +6,20 @@ const router = express.Router();
 
 const bcrypt = require("bcryptjs");
 
+// <-- HERE MIDDLEWARE REQUEST(or CHECK) AUTHORIZATION BEFORE PROCESSING FURTHER(sending response.json in each url_routes)... -->
+const requireAuthJwt = require("../protect-api/jwt");
+const errorHandler = require("../protect-api/error-handler");
+
 const User = require("../models/user");
 
 const Favourite = require("../models/favourite");
 
 // middleware that is specific to this router
 const middlewareUser = router.use(express.urlencoded({ extended: false }));
+
+//check the Authorization
+router.use(requireAuthJwt());
+router.use(errorHandler);
 
 // install and require npm **jsonwebtoken** package
 const jwt = require("jsonwebtoken");
@@ -52,19 +60,15 @@ router.get("/login", async (req, res) => {
     const user = await User.findOne({ email }).select("-passwordHash");
 
     const maxAge = 3 * 1000 * 60 * 60 * 24; // 3days in ms
-    //jwt signing
+
+    //jwt signing (CREATING TOKEN FOR ACCESS AUTHORIZATION)
     const token = createToken(user.id, user.isAdmin);
 
-    /* res.cookie(
-      "jwt",
-      { token: token, user: user.id },
-      { httpOnly: true, maxAge: maxAge }
-    ); */
-
-    console.log("token AC:", token);
+    console.log("token GET LOG:", token);
 
     const userId = user.id;
 
+    //(SENDING TOKEN FOR VALID AUTHORIZATION before : res.json)
     res.cookie("access_jwt_token", token, { httpOnly: true, maxAge: maxAge });
 
     res.cookie("userId", userId, { httpOnly: true, maxAge: maxAge });
@@ -106,9 +110,12 @@ router.post("/register", async (req, res) => {
 
     const maxAge = 3 * 1000 * 60 * 60 * 24; // 3days in ms
     //jwt signing
+
     const token = createToken(user.id, user.isAdmin);
-    res.cookie("jwt", { token }, { httpOnly: true, maxAge: maxAge });
-    res.cookie("userId", { userId }, { httpOnly: true, maxAge: maxAge });
+
+    res.cookie("access_jwt_token", token, { httpOnly: true, maxAge: maxAge });
+
+    res.cookie("userId", userId, { httpOnly: true, maxAge: maxAge });
 
     res.status(200).json({ success: true, data: user });
   } catch (err) {
@@ -142,13 +149,16 @@ router.post("/login", async (req, res) => {
     if (user && bcrypt.compareSync(req.body.password, user.passwordHash)) {
       const maxAge = 3 * 1000 * 60 * 60 * 24; // 3days in ms
 
-      //jwt signing
+      //jwt signing (CREATING TOKEN FOR ACCESS AUTHORIZATION)
       const userId = user.id;
       const token = createToken(user.id, user.isAdmin);
+
+      //(SENDING TOKEN FOR VALID AUTHORIZATION before : res.json)
       res.cookie("access_jwt_token", token, { httpOnly: true, maxAge: maxAge });
+
       res.cookie("userId", userId, { httpOnly: false, maxAge: maxAge });
 
-      console.log("token AC:", token);
+      console.log("token POST:", token);
 
       return res.status(200).json({
         success: true,
