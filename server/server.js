@@ -98,22 +98,22 @@ app.use("/api/delivery/images", express.static("public/images/vegetarians")); */
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/public/images/meats")
+  express.static(__dirname + "/src/public/images/meats")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/public/images/vegetarians")
+  express.static(__dirname + "/src/public/images/vegetarians")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/public/images/desserts")
+  express.static(__dirname + "/src/public/images/desserts")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/public/images/seafoods")
+  express.static(__dirname + "/src/public/images/seafoods")
 );
 
 /* app.use("/api/delivery/images", express.static("public/images/desserts")); */ //e.g : http://localhost:5000/api/delivery/images/dessert_1702648345030.jpeg
