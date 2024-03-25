@@ -5,6 +5,7 @@ export async function getMeals() {
   console.log("axios.defaults.baseUrl :", axios.defaults.baseUrl);
 
   const body_url = axios.defaults.baseUrl;
+  
   const api_url = `${body_url}/meals`;
 
   try {

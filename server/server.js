@@ -1,21 +1,21 @@
 //route domains
-const mealsRouter = require("./routes/meals-route");
+const mealsRouter = require("./src/routes/meals-route");
 
-const categoriesRouter = require("./routes/categories-route");
+const categoriesRouter = require("./src/routes/categories-route");
 
-const ordersRouter = require("./routes/orders-route");
+const ordersRouter = require("./src/routes/orders-route");
 
-const userRouter = require("./routes/users-route");
+const userRouter = require("./src/routes/users-route");
 
-const ratedMealRouter = require("./routes/rated-meal-route");
+const ratedMealRouter = require("./src/routes/rated-meal-route");
 
-const ratingsRouter = require("./routes/ratings-route");
+const ratingsRouter = require("./src/routes/ratings-route");
 
-const paymentRouter = require("./routes/payments-route");
+const paymentRouter = require("./src/routes/payments-route");
 
-const requireAuthJwt = require("./protect-api/jwt");
+const requireAuthJwt = require("./src/protect-api/jwt");
 
-const errorHandler = require("./protect-api/error-handler");
+const errorHandler = require("./src/protect-api/error-handler");
 
 // express Brain_
 
@@ -142,7 +142,7 @@ app.get("/", (req, res) => {
 });
 
 //mongoDB connect call &  nodejs server listening port
-const connectDB = require("./config/db");
+const connectDB = require("./src/config/db");
 
 connectDB().then(() =>
   app.listen(PORT, () => {
