@@ -2,7 +2,10 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 export async function getMeals() {
-  const api_url = `${axios.defaults.baseUrl}/meals`;
+  console.log("axios.defaults.baseUrl :", axios.defaults.baseUrl);
+
+  const body_url = axios.defaults.baseUrl;
+  const api_url = `${body_url}/meals`;
 
   try {
     const res = await axios.get(api_url);
