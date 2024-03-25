@@ -4,7 +4,7 @@ axios.defaults.withCredentials = true;
 
 export async function postRatedMeal(mealId, rating, feedback) {
   try {
-    let api_url = `http://localhost:5000/api/delivery/ratedmeals`;
+    let api_url = `${axios.defaults.baseUrl}/ratedmeals`;
 
     const res = await axios.post(
       api_url,
@@ -33,7 +33,7 @@ export async function postRatedMeal(mealId, rating, feedback) {
 //UPDATE(PUT) - Rated MEAL EXISTING
 export async function updateRatedMeal(ratedId, rating, newFeedback) {
   try {
-    let api_url = `http://localhost:5000/api/delivery/ratedmeals/ratedmeal/${ratedId}`;
+    let api_url = `${axios.defaults.baseUrl}/ratedmeals/ratedmeal/${ratedId}`;
 
     const response = await axios.put(
       api_url,

@@ -1,11 +1,10 @@
 import axios from "axios";
-import qs from "qs";
 
-axios.defaults.withCredentials = true;
+/* axios.defaults.withCredentials = true; */
 
 export async function initiateOrder(userEmail, orderSpecsCurrent) {
   try {
-    let api_url = "http://localhost:5000/api/delivery/orders/order";
+    let api_url = `${axios.defaults.baseUrl}/orders/order`;
 
     // console.log("API-orderSpecsCurrent :", orderSpecsCurrent);
     const ordersSpecs = orderSpecsCurrent;
@@ -42,7 +41,7 @@ export async function initiateOrder(userEmail, orderSpecsCurrent) {
 
 export async function fetchOrdersWeek(userId) {
   try {
-    let api_url = "http://localhost:5000/api/delivery/orders/orderweek";
+    let api_url = `${axios.defaults.baseUrl}/orders/orderweek`;
 
     const res = await axios.get(
       api_url,
@@ -70,7 +69,7 @@ export async function updateThisLocationOrder(userId, newLoc, orderId) {
   try {
     const { phone, city, street } = newLoc;
 
-    let api_url = "http://localhost:5000/api/delivery/orders/order/newlocation";
+    let api_url = `${axios.defaults.baseUrl}/orders/order/newlocation`;
 
     const res = await axios.put(
       `${api_url}/${orderId}`,
@@ -99,7 +98,7 @@ export async function updateThisLocationOrder(userId, newLoc, orderId) {
 
 export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
   try {
-    let api_url = "http://localhost:5000/api/delivery/orders/order/updateprice";
+    let api_url = `${axios.defaults.baseUrl}/orders/order/updateprice`;
 
     /* console.log("orderId -API-PUT METHOD:", orderId);
     console.log("orderSpecsCurrent -API-PUT METHOD:", orderSpecsCurrent); */
@@ -152,7 +151,7 @@ export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
 
 export async function checkTotalPriceOrder(orderSpecsCurrent) {
   try {
-    let api_url = "http://localhost:5000/api/delivery/orders/order/checkprice";
+    let api_url = `${axios.defaults.baseUrl}/orders/order/checkprice`;
 
     const res = await axios.post(
       api_url,

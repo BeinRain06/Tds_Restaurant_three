@@ -2,11 +2,11 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 export async function getMeals() {
-  const api_url = "http://localhost:5000/api/delivery/meals";
+  const api_url = `${axios.defaults.baseUrl}/meals`;
 
   try {
     const res = await axios.get(api_url);
-    console.log("responseMeal: ", res);
+    // console.log("responseMeal: ", res);
     let meals = [];
     meals = res.data.data;
     return meals;
@@ -16,7 +16,8 @@ export async function getMeals() {
 }
 
 export async function getDesserts() {
-  const api_url = "http://localhost:3000/api/meals";
+  const api_url = `${axios.defaults.baseUrl}/meals`;
+
   let desserts = [];
   try {
     const res = await axios.get(`${api_url}/desserts`);
@@ -28,7 +29,7 @@ export async function getDesserts() {
 }
 
 export async function getSeaFoods() {
-  const api_url = "http://localhost:3000/api/meals";
+  const api_url = `${axios.defaults.baseUrl}/meals`;
   let seafoods = [];
   try {
     const res = await axios.get(`${api_url}/seafoods`);
@@ -40,7 +41,7 @@ export async function getSeaFoods() {
 }
 
 export async function getVegetarians() {
-  const api_url = "http://localhost:3000/api/meals";
+  const api_url = `${axios.defaults.baseUrl}/meals`;
   let vegetarians = [];
   try {
     const res = await axios.get(`${api_url}/vegetarians`);
@@ -52,7 +53,7 @@ export async function getVegetarians() {
 }
 
 export async function getSeaMeats() {
-  const api_url = "http://localhost:3000/api/meals";
+  const api_url = `${axios.defaults.baseUrl}/meals`;
   let meats = [];
   try {
     const res = await axios.get(`${api_url}/meats`);
@@ -65,7 +66,7 @@ export async function getSeaMeats() {
 
 export async function* getAllTypesFoods() {
   try {
-    const api_url = "http://localhost:3000/api/meals";
+    const api_url = `${axios.defaults.baseUrl}/meals`;
 
     //GET MEALS
     const resMeals = await axios.get(`${api_url}`);

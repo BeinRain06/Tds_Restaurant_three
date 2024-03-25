@@ -1,7 +1,5 @@
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-
 export async function userRegistering({
   password,
   city,
@@ -13,7 +11,7 @@ export async function userRegistering({
   try {
     let userIdentity;
 
-    let api_url = "http://localhost:5000/api/delivery/users/register";
+    let api_url = `${axios.defaults.baseUrl}/users/register`;
 
     const res = await axios.post(
       api_url,
@@ -46,7 +44,7 @@ export async function userLogging({ email, password }) {
   try {
     let userIdentity;
 
-    let api_url = "http://localhost:5000/api/delivery/users/login";
+    let api_url = `${axios.defaults.baseUrl}/users/users/login`;
 
     // console.log(`API-- this email: ${email}, this password:${password}`);
 
@@ -77,7 +75,7 @@ export async function updatingRegistering(email) {
   try {
     let userIdentity;
 
-    let api_url = "http://localhost:5000/api/delivery/users/register";
+    let api_url = `${axios.defaults.baseUrl}/users/users/register`;
 
     const res = await axios.put(
       api_url,

@@ -1,7 +1,5 @@
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-
 //FOR POST
 /* export async function postPayment(orderId, account, codePayment, totalPrice) {
   //remember you post the Payment when you click on the "validate Button" in template Order.jsx
@@ -39,7 +37,7 @@ axios.defaults.withCredentials = true;
 export async function postPayment(orderId, account, codePayment, totalPriceIn) {
   //remember you post the Payment when you click on the "validate Button" in template Order.jsx
   try {
-    let api_url = "http://localhost:5000/api/delivery/payments/payment";
+    let api_url = `${axios.defaults.baseUrl}/payments/payment`;
 
     const params = {
       order: orderId,
@@ -77,7 +75,7 @@ export async function postPayment(orderId, account, codePayment, totalPriceIn) {
 export async function endPayment(paymentId, account, amountBill) {
   //remember you post the Payment when you click on the "validate Button" in template Order.jsx
   try {
-    let api_url = "http://localhost:5000/api/delivery/payments/payment";
+    let api_url = `${axios.defaults.baseUrl}/payments/payment`;
 
     let endPayment;
 
