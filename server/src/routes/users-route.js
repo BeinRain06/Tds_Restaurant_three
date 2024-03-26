@@ -2,6 +2,8 @@ const express = require("express");
 
 require("dotenv").config();
 
+var cors = require("cors");
+
 const router = express.Router();
 
 const bcrypt = require("bcryptjs");
@@ -16,6 +18,22 @@ const Favourite = require("../models/favourite");
 
 // middleware that is specific to this router
 const middlewareUser = router.use(express.urlencoded({ extended: false }));
+
+//middleware cors
+router.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://tds-restaurant-three-ui.vercel.app",
+      "https://tds-restaurant-three.vercel.app",
+      "https://tds-restaurant-three-back-end.onrender.com",
+    ],
+    // preflightContinue: false,
+    credentials: true,
+  })
+);
 
 //check the Authorization
 router.use(requireAuthJwt());

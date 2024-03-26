@@ -17,6 +17,7 @@ router.use(
       "http://localhost:5173",
       "https://tds-restaurant-three-ui.vercel.app",
       "https://tds-restaurant-three.vercel.app/",
+      "https://tds-restaurant-three-back-end.onrender.com",
     ],
     credentials: true,
   })
