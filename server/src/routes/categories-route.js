@@ -7,6 +7,17 @@ const Category = require("../models/category");
 // middleware that is specific to this router
 router.use(express.urlencoded({ extended: false }));
 
+// --> preflight request
+router.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://tds-restaurant-three-back-end.onrender.com"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 router.use(
   cors({
     origin: [

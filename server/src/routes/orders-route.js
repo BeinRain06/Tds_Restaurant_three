@@ -13,6 +13,17 @@ const User = require("../models/user");
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
+// --> preflight request
+router.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://tds-restaurant-three-back-end.onrender.com"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 router.use(
   cors({
     origin: [
