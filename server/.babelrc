@@ -4,7 +4,7 @@
     [
       "module-resolver",
       {
-        "root": ["./src"] //server.js
+        "root": ["./src"] //(find) server.js
       }
     ]
   ]

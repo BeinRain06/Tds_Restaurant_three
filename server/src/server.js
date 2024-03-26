@@ -1,21 +1,21 @@
 //route domains
-const mealsRouter = require("./src/routes/meals-route");
+const mealsRouter = require("./routes/meals-route");
 
-const categoriesRouter = require("./src/routes/categories-route");
+const categoriesRouter = require("./routes/categories-route");
 
-const ordersRouter = require("./src/routes/orders-route");
+const ordersRouter = require("./routes/orders-route");
 
-const userRouter = require("./src/routes/users-route");
+const userRouter = require("./routes/users-route");
 
-const ratedMealRouter = require("./src/routes/rated-meal-route");
+const ratedMealRouter = require("./routes/rated-meal-route");
 
-const ratingsRouter = require("./src/routes/ratings-route");
+const ratingsRouter = require("./routes/ratings-route");
 
-const paymentRouter = require("./src/routes/payments-route");
+const paymentRouter = require("./routes/payments-route");
 
-const requireAuthJwt = require("./src/protect-api/jwt");
+const requireAuthJwt = require("./protect-api/jwt");
 
-const errorHandler = require("./src/protect-api/error-handler");
+const errorHandler = require("./protect-api/error-handler");
 
 // express Brain_
 
@@ -29,7 +29,9 @@ const bodyParser = require("body-parser");
 
 var cors = require("cors");
 
-require("dotenv").config();
+// require("dotenv").config();
+
+require("dotenv").config({ path: path.join(__dirname, `..`) });
 
 // domains api allowed
 app.use(
@@ -98,22 +100,22 @@ app.use("/api/delivery/images", express.static("public/images/vegetarians")); */
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/src/public/images/meats")
+  express.static(__dirname + "/public/images/meats")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/src/public/images/vegetarians")
+  express.static(__dirname + "/public/images/vegetarians")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/src/public/images/desserts")
+  express.static(__dirname + "/public/images/desserts")
 );
 
 app.use(
   "/api/delivery/images",
-  express.static(__dirname + "/src/public/images/seafoods")
+  express.static(__dirname + "/public/images/seafoods")
 );
 
 /* app.use("/api/delivery/images", express.static("public/images/desserts")); */ //e.g : http://localhost:5000/api/delivery/images/dessert_1702648345030.jpeg
@@ -142,7 +144,7 @@ app.get("/", (req, res) => {
 });
 
 //mongoDB connect call &  nodejs server listening port
-const connectDB = require("./src/config/db");
+const connectDB = require("./config/db");
 
 connectDB().then(() =>
   app.listen(PORT, () => {
