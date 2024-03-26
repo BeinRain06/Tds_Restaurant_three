@@ -30,7 +30,7 @@ router.use(
       "https://tds-restaurant-three.vercel.app",
       "https://tds-restaurant-three-back-end.onrender.com",
     ],
-    // preflightContinue: false,
+    preflightContinue: false,
     credentials: true,
   })
 );
