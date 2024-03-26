@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import axios from "axios";
 import Layout from "./components/layout/Layout.jsx";
 import { Home } from "./components/navbarLink/Home.jsx";
 import FoodsDay from "./components/navbarLink/FoodsDay.jsx";
@@ -10,6 +11,10 @@ import Events from "./components/navbarLink/Events.jsx";
 import Welcome from "./components/loading/welcome.jsx";
 
 import "./App.css";
+
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

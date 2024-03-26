@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import MealContextProvider, {
   INITIAL_STATE,
@@ -21,10 +20,6 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import "@fortawesome/fontawesome-free/css/all.css";
 import App from "./App.jsx";
 import "./index.css";
-
-axios.defaults.baseUrl = import.meta.env.VITE_API_BASE_URL;
-
-axios.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

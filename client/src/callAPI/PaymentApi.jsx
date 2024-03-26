@@ -37,8 +37,6 @@ import axios from "axios";
 export async function postPayment(orderId, account, codePayment, totalPriceIn) {
   //remember you post the Payment when you click on the "validate Button" in template Order.jsx
   try {
-    let api_url = `${axios.defaults.baseUrl}/payments/payment`;
-
     const params = {
       order: orderId,
       account: account,
@@ -46,7 +44,7 @@ export async function postPayment(orderId, account, codePayment, totalPriceIn) {
       amountBill: totalPriceIn,
     };
 
-    const response = await fetch(api_url, {
+    const response = await fetch("/payments/payment", {
       method: "POST",
       body: JSON.stringify(params),
       mode: "cors",
@@ -75,12 +73,10 @@ export async function postPayment(orderId, account, codePayment, totalPriceIn) {
 export async function endPayment(paymentId, account, amountBill) {
   //remember you post the Payment when you click on the "validate Button" in template Order.jsx
   try {
-    let api_url = `${axios.defaults.baseUrl}/payments/payment`;
-
     let endPayment;
 
     const res = await axios.put(
-      `${api_url}/${paymentId}`,
+      "/payments/payment",
       {
         account: account,
         amountBill: amountBill,

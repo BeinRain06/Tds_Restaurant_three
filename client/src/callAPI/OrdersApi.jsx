@@ -4,8 +4,6 @@ import axios from "axios";
 
 export async function initiateOrder(userEmail, orderSpecsCurrent) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/orders/order`;
-
     // console.log("API-orderSpecsCurrent :", orderSpecsCurrent);
     const ordersSpecs = orderSpecsCurrent;
 
@@ -18,7 +16,7 @@ export async function initiateOrder(userEmail, orderSpecsCurrent) {
       street: "home",
     };
 
-    const response = await fetch(api_url, {
+    const response = await fetch("/orders/order", {
       method: "POST",
       body: JSON.stringify(params),
       mode: "cors",
@@ -41,10 +39,8 @@ export async function initiateOrder(userEmail, orderSpecsCurrent) {
 
 export async function fetchOrdersWeek(userId) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/orders/orderweek`;
-
     const res = await axios.get(
-      api_url,
+      "/orders/orderweek",
       {
         user: userId,
       },
@@ -69,10 +65,8 @@ export async function updateThisLocationOrder(userId, newLoc, orderId) {
   try {
     const { phone, city, street } = newLoc;
 
-    let api_url = `${axios.defaults.baseUrl}/orders/order/newlocation`;
-
     const res = await axios.put(
-      `${api_url}/${orderId}`,
+      "/orders/order/newlocation",
       {
         user: userId,
         phone: phone,
@@ -98,13 +92,11 @@ export async function updateThisLocationOrder(userId, newLoc, orderId) {
 
 export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/orders/order/updateprice`;
-
     /* console.log("orderId -API-PUT METHOD:", orderId);
     console.log("orderSpecsCurrent -API-PUT METHOD:", orderSpecsCurrent); */
 
     const res = await axios.put(
-      `${api_url}/${orderId}`,
+      "/orders/order/updateprice",
       {
         ordersSpecs: orderSpecsCurrent,
       },
@@ -151,10 +143,8 @@ export async function updateThisTotalPriceOrder(orderId, orderSpecsCurrent) {
 
 export async function checkTotalPriceOrder(orderSpecsCurrent) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/orders/order/checkprice`;
-
     const res = await axios.post(
-      api_url,
+      "/orders/order/checkprice",
       {
         ordersSpecs: orderSpecsCurrent,
       },

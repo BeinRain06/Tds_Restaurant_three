@@ -2,10 +2,8 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 export async function getAllRatings() {
-  let api_url = `${axios.defaults.baseUrl}/ratings`;
-
   try {
-    const res = await axios.get(api_url);
+    const res = await axios.get("/ratings");
 
     const allRatings = await res.data.data; //res.data(axios res) - .data (structured data response in backend)
 
@@ -22,7 +20,7 @@ export async function getThisUserRatings(userId) {
   let api_url = `${axios.defaults.baseUrl}/ratings`;
 
   try {
-    const res = await axios.get(`${api_url}/${userId}`);
+    const res = await axios.get("/ratings");
 
     const ratings = res.data.data; //res.data(axios res) - .data (structured data response in backend)
 
@@ -37,10 +35,8 @@ export async function getThisUserRatings(userId) {
 //POST A RATING IDENTITY  (ONE TIME)
 export async function ratingIdentity(userId, triggeredRatedMealId) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/ratings`;
-
     const response = await axios.post(
-      api_url,
+      "/ratings",
       {
         user: userId,
         ratedMeal: triggeredRatedMealId,
@@ -65,10 +61,8 @@ export async function ratingIdentity(userId, triggeredRatedMealId) {
 //UPDATE IN RATING SENDING NEW RATEDMEAL IDS
 export async function ratingUpdation(ratingId, ratedIds) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/ratings/rating/${ratingId}`;
-
     const response = await axios.put(
-      api_url,
+      `/ratings/rating/${ratingId}`,
       {
         ratedMeals: ratedIds,
       },
@@ -92,13 +86,11 @@ export async function ratingUpdation(ratingId, ratedIds) {
 //UPDATE MEAL SCORE RATINGS
 export async function updateMealScoreRating(mealId, resultArrRating) {
   try {
-    let api_url = `${axios.defaults.baseUrl}/ratings/newratings/meal/${mealId}`;
-
     console.log("meal aHi ID:", mealId);
     console.log("result AAiH Ratings:", resultArrRating);
 
     const res = await axios.put(
-      api_url,
+      `/ratings/newratings/meal/${mealId}`,
       {
         ratingsArr: resultArrRating,
       },

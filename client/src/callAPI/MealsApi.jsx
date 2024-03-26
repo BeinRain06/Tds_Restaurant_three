@@ -2,14 +2,12 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 export async function getMeals() {
-  console.log("axios.defaults.baseUrl :", axios.defaults.baseUrl);
+  // const body_url = axios.defaults.baseUrl;
 
-  const body_url = axios.defaults.baseUrl;
-  
-  const api_url = `${body_url}/meals`;
+  // const api_url = `${body_url}/meals`;
 
   try {
-    const res = await axios.get(api_url);
+    const res = await axios.get("/meals");
     // console.log("responseMeal: ", res);
     let meals = [];
     meals = res.data.data;
@@ -20,11 +18,9 @@ export async function getMeals() {
 }
 
 export async function getDesserts() {
-  const api_url = `${axios.defaults.baseUrl}/meals`;
-
   let desserts = [];
   try {
-    const res = await axios.get(`${api_url}/desserts`);
+    const res = await axios.get("/meals/desserts");
     desserts = res.data.data; //res.data(axios res) - .data (structured data response in backend)
     return desserts;
   } catch (err) {
@@ -33,10 +29,9 @@ export async function getDesserts() {
 }
 
 export async function getSeaFoods() {
-  const api_url = `${axios.defaults.baseUrl}/meals`;
   let seafoods = [];
   try {
-    const res = await axios.get(`${api_url}/seafoods`);
+    const res = await axios.get("/meals/seafoods");
     seafoods = res.data.data; //res.data(axios res) - .data (structured data response in backend)
     return seafoods;
   } catch (err) {
@@ -45,10 +40,9 @@ export async function getSeaFoods() {
 }
 
 export async function getVegetarians() {
-  const api_url = `${axios.defaults.baseUrl}/meals`;
   let vegetarians = [];
   try {
-    const res = await axios.get(`${api_url}/vegetarians`);
+    const res = await axios.get("/meals/vegetarians");
     vegetarians = res.data.data; //res.data(axios res) - .data (structured data response in backend)
     return vegetarians;
   } catch (err) {
@@ -57,10 +51,9 @@ export async function getVegetarians() {
 }
 
 export async function getSeaMeats() {
-  const api_url = `${axios.defaults.baseUrl}/meals`;
   let meats = [];
   try {
-    const res = await axios.get(`${api_url}/meats`);
+    const res = await axios.get("/meals/meats");
     meats = res.data.data; //res.data(axios res) - .data (structured data response in backend)
     return meats;
   } catch (err) {
@@ -70,10 +63,8 @@ export async function getSeaMeats() {
 
 export async function* getAllTypesFoods() {
   try {
-    const api_url = `${axios.defaults.baseUrl}/meals`;
-
     //GET MEALS
-    const resMeals = await axios.get(`${api_url}`);
+    const resMeals = await axios.get("/meals");
     sendMeals = resMeals.data.data;
 
     yield sendMeals;
