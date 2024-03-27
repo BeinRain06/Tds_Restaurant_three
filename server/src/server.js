@@ -104,12 +104,7 @@ app.post("/api/delivery/picture", upload.single("meat"), function (req, res) {
   });
 });
 
-//BASE_URL to print image in browse
-
-/* app.use("/api/delivery/images", express.static("public/images/meats"));
-
-app.use("/api/delivery/images", express.static("public/images/vegetarians")); */
-
+//BASE_URL: Print Image in Browser & Save in the directory
 app.use(
   "/api/delivery/images",
   express.static(__dirname + "/public/images/meats")

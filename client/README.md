@@ -1,8 +1,25 @@
-# React + Vite
+# <img with="20px" height="20px" src="./link-solid.svg"/> TDS Restaurant <span></span> <img with="20px" height="20px" src="./folder-open-regular.svg"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This little website give you a small inside about how will look your online **furniture shop** website. Hope we will enjoy it !
 
-Currently, two official plugins are available:
+<img with="20px" height="20px" src="./link-solid.svg"/> View live
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Clone the repository
+  [ Link repository](https://github.com/BeinRain06/Tds_Restaurant_three.git)
+- **run** the command **npm run dev** both into the terminal directory
+
+  `tds-restaurant/server` <hr> & `tds-restaurant/client`
+
+## <img with="16px" margin-right="0.15rem" height="16px" src="./link-solid.svg"/> Features <span > </span> <img with="16px"  position="relative" left="2rem" height="16px" src="./snowflake-regular.svg"/>
+
+- Order 0ne to 3 books once
+  >
+- Initialize order until payment
+  >
+- Fourth Meal Game
+  >
+- Rate meals
+  >
+- Get Faourites Meals
+
+[view code](https://github.com/BeinRain06/Tds_Restaurant_three.git)
