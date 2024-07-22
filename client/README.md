@@ -21,5 +21,11 @@ This little website give you a small inside about how will look your online **fu
 - Rate meals
   >
 - Get Faourites Meals
+  <br>
+
+- <img src="./Screenshot-1.png" width="385px" margin="1rem 0 1rem">
+    <br>
+    <br>
+- <img src="./Screenshot-2.png" width="385px" margin="1rem 0 0.75rem">
 
 [view code](https://github.com/BeinRain06/Tds_Restaurant_three.git)
